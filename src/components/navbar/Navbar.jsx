@@ -9,7 +9,7 @@ const Navbar = () => {
     setIsNavOpen(!isNavOpen);
   };
   return (
-    <nav className="md:flex md:justify-start md:items-center md:border-b md:border-b-yellow px-9 py-2">
+    <nav className="md:flex md:justify-start md:items-center md:border-b md:border-b-yellow px-20 py-2">
       <div className="flex items-center justify-between mr-0 md:flex md:mr-6">
         <img className="h-14 w-14 object-contain" src={logo} />
         <div onClick={handleToggleNav}>
