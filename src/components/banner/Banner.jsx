@@ -5,25 +5,30 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <div className="px-28 pt-24 flex justify-between items-center">
+    <div className="px-9 md:px-28 pt-24 flex justify-between items-center flex-wrap">
       <div>
-        <p className="text-[2.5rem] font-bold">Hi, I am</p>
-        <p className="text-[4.8rem] font-bold">Russell</p>
-        <p className="text-[1rem]">
+        <p className="text-[2rem] md:text-[2.5rem] font-bold">Hi, I am</p>
+        <p className="text-[4rem] md:text-[4.8rem] font-bold">Russell</p>
+        <p className="text-[0.9rem] md:text-[1rem]">
           a showcase of my projects and my abilities
         </p>
         <div className="flex gap-2 mt-5">
           <button className="button-style">
-            <FiGithub size={25} />
+            <FiGithub className="text-xl md:text-2xl" />
           </button>
           <button className="button-style">
-            <FaLinkedinIn size={25} />
+            <FaLinkedinIn className="text-xl md:text-2xl" />
           </button>
-          <button className="button-style font-bold">Download CV</button>
+          <button className="button-style font-bold text-sm md:text-[1rem]">
+            Download CV
+          </button>
         </div>
       </div>
       <div>
-        <img className="object-cover w-auto h-[25rem]" src={bannerIcon} />
+        <img
+          className="object-cover w-auto bg-center mt-16 mx-auto md:mt-0 md:mx-0 sm:h-[15rem] md:h-[15rem] lg-[25rem] xl:h-[25rem]"
+          src={bannerIcon}
+        />
       </div>
     </div>
   );

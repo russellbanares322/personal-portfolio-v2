@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .button-style {
-  @apply bg-yellow text-black px-5 py-2 rounded-md transition ease-in-out duration-500 hover:bg-light-blue hover:text-white;
+  @apply bg-yellow text-black px-4 md:px-5 py-2 rounded-md transition ease-in-out duration-500 hover:bg-light-blue hover:text-white;
 }
