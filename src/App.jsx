@@ -1,5 +1,11 @@
+import Home from "./components/home/Home";
+
 function App() {
-  return <>Hi</>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 }
 
 export default App;
