@@ -7,10 +7,10 @@ import Projects from "../projects/Projects";
 
 const Home = () => {
   return (
-    <div className="bg-blue min-h-[100vh] h-full text-white">
+    <div>
       <Navbar />
       <Banner />
-      {/* <Projects /> */}
+      <Projects />
       {/* <About /> */}
       {/* <Contact /> */}
     </div>
