@@ -8,10 +8,11 @@ const Navbar = () => {
   const handleToggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
+
   return (
-    <nav className="md:flex md:justify-start md:items-center md:border-b md:border-b-yellow px-20 py-2">
+    <nav className="md:flex md:justify-start md:items-center border-b border-b-yellow px-9 md:px-28 py-2">
       <div className="flex items-center justify-between mr-0 md:flex md:mr-6">
-        <img className="h-14 w-14 object-contain" src={logo} />
+        <img className="h-16 w-16 object-contain" src={logo} />
         <div onClick={handleToggleNav}>
           {isNavOpen && (
             <HiOutlineX className="cursor-pointer md:hidden" size={25} />
@@ -23,8 +24,8 @@ const Navbar = () => {
       </div>
       <ul
         className={`${
-          isNavOpen ? "top-[60px]" : "top-[-400px]"
-        } border-t border-t-yellow md:opacity-1 absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-500 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-5 text-sm mt-7 py-5 md:py-0 md:border-none md:mt-0`}
+          isNavOpen && "h-[10rem] opacity-100"
+        } border-b opacity-0 h-0 md:h-full md:opacity-100 border-b-yellow bg-blue absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-500 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-5 text-sm mt-[0.85rem] pt-2 md:py-0 md:border-none md:mt-0`}
       >
         <li className="cursor-pointer">Home</li>
         <li className="cursor-pointer">About</li>
