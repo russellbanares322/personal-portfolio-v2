@@ -5,7 +5,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <div className="px-9 md:px-28 pt-24 flex justify-between items-center flex-wrap">
+    <div className="page-padding flex justify-between items-center flex-wrap">
       <div>
         <p className="text-[2rem] md:text-[2.5rem] font-bold">Hi, I am</p>
         <p className="text-[4rem] md:text-[4.8rem] font-bold">Russell</p>

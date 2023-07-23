@@ -1,7 +1,11 @@
 import React from "react";
 
 const About = () => {
-  return <div>About</div>;
+  return (
+    <div className="page-padding">
+      <p className="section-title">About</p>
+    </div>
+  );
 };
 
 export default About;
