@@ -22,7 +22,6 @@ const Projects = () => {
             perPage: 3,
             gap: 20,
             pagination: false,
-            arrows: hoveredProjectId === null,
             breakpoints: {
               640: {
                 perPage: 1,
@@ -55,20 +54,24 @@ const Projects = () => {
                   />
                   <div
                     className={`bg-whitesmoke ${
-                      showProjectDetails ? "h-36" : "h-0"
+                      showProjectDetails ? "h-36" : "h-2"
                     } text-blue transition-all  duration-500 ease-in-out border-l-4 border-l-yellow`}
                   >
                     <div className="flex justify-between items-center px-2 pt-3">
                       <p className="font-bold text-md">{project.title}</p>
                       <div className="flex gap-2">
-                        <HiOutlineExternalLink
-                          title="Live link"
-                          className="text-xl cursor-pointer  text-blue hover:text-yellow duration-500 ease-in-out"
-                        />
-                        <HiOutlineCode
-                          title="Source code"
-                          className="text-xl cursor-pointer  text-blue hover:text-yellow duration-500 ease-in-out"
-                        />
+                        <a target="_blank" href={project.live_link}>
+                          <HiOutlineExternalLink
+                            title="Live link"
+                            className="text-xl cursor-pointer  text-blue hover:text-yellow duration-500 ease-in-out"
+                          />
+                        </a>
+                        <a target="_blank" href={project.source_code}>
+                          <HiOutlineCode
+                            title="Source code"
+                            className="text-xl cursor-pointer  text-blue hover:text-yellow duration-500 ease-in-out"
+                          />
+                        </a>
                       </div>
                     </div>
                     <p className="px-2 pt-1 text-sm">{project.details}</p>
