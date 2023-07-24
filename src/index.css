@@ -11,3 +11,10 @@
 .page-padding {
   @apply px-9 md:px-28 pt-24;
 }
+
+.splide__arrow.splide__arrow--prev {
+  @apply translate-x-[-42px] text-xs md:translate-x-[-60px] md:text-base;
+}
+.splide__arrow.splide__arrow--next {
+  @apply translate-x-[42px] text-xs md:translate-x-[60px] md:text-base;
+}
