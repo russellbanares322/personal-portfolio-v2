@@ -4,6 +4,7 @@ import Banner from "../banner/Banner";
 import Contact from "../contact/Contact";
 import Navbar from "../navbar/Navbar";
 import Projects from "../projects/Projects";
+import TechStacks from "../tech-stacks/TechStacks";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Banner />
       <Projects />
       <About />
+      <TechStacks />
       <Contact />
     </div>
   );
