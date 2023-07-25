@@ -28,12 +28,12 @@ const Projects = () => {
                 gap: 10,
               },
               767: {
-                perPage: 1,
-                gap: 2,
+                perPage: 2,
+                gap: 15,
               },
               1024: {
-                perPage: 1,
-                gap: 3,
+                perPage: 2,
+                gap: 15,
               },
             },
           }}
@@ -53,12 +53,12 @@ const Projects = () => {
                     src={project.thumbnail_image}
                   />
                   <div
-                    className={`bg-whitesmoke ${
-                      showProjectDetails ? "h-36" : "h-2"
-                    } text-blue transition-all  duration-500 ease-in-out border-l-4 border-l-yellow`}
+                    className={`bg-whitesmoke h-36 text-blue transition-all  duration-500 ease-in-out border-l-4 border-l-yellow`}
                   >
                     <div className="flex justify-between items-center px-2 pt-3">
-                      <p className="font-bold text-md">{project.title}</p>
+                      <p className="font-bold text-[0.9rem] md:text-md">
+                        {project.title}
+                      </p>
                       <div className="flex gap-2">
                         <a target="_blank" href={project.live_link}>
                           <HiOutlineExternalLink
@@ -74,7 +74,9 @@ const Projects = () => {
                         </a>
                       </div>
                     </div>
-                    <p className="px-2 pt-1 text-sm">{project.details}</p>
+                    <p className="px-2 pt-1 text-[0.8rem] md:text-sm">
+                      {project.details}
+                    </p>
                   </div>
                 </div>
               </SplideSlide>
