@@ -40,23 +40,28 @@ const Projects = () => {
         >
           {projectsData.map((project) => {
             const showProjectDetails = hoveredProjectId === project.id;
-
             return (
               <SplideSlide key={project.id}>
                 <div
                   onMouseLeave={onHideProjectDetails}
                   onMouseEnter={() => onShowProjectDetails(project.id)}
-                  className="bg-whitesmoke"
+                  className="bg-whitesmoke relative overflow-hidden"
                 >
                   <img
-                    className="object-contain transition duration-500 ease-in-out"
+                    className={`object-contain transition duration-500 ease-in-out shadow-md inset-0 ${
+                      showProjectDetails && "blur-[0.1rem]"
+                    }`}
                     src={project.thumbnail_image}
                   />
                   <div
-                    className={`bg-whitesmoke h-36 text-blue transition-all  duration-500 ease-in-out border-l-4 border-l-yellow`}
+                    className={` ${
+                      showProjectDetails
+                        ? "bottom-0 opacity-100 bg-whitesmoke text-blue"
+                        : "-bottom-28 bg-opacity-30 bg-light-blue text-light-yellow"
+                    }  h-36 absolute transition-all duration-500 ease-in-out border-l-4 border-l-yellow`}
                   >
-                    <div className="flex justify-between items-center px-2 pt-3">
-                      <p className="font-bold text-[0.9rem] md:text-md">
+                    <div className="flex justify-between items-center px-2 pt-2">
+                      <p className="font-bold text-[0.9rem] md:text-md opacity-100">
                         {project.title}
                       </p>
                       <div className="flex gap-2">
