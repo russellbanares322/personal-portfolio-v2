@@ -48,16 +48,20 @@ const Projects = () => {
                   className="bg-whitesmoke relative overflow-hidden"
                 >
                   <img
-                    className={`object-contain transition duration-500 ease-in-out shadow-md inset-0 ${
-                      showProjectDetails && "blur-[0.1rem]"
-                    }`}
+                    className="object-contain"
                     src={project.thumbnail_image}
+                  />
+                  <div className="absolute h-[4.5rem] w-full bg-black/40 flex justify-center items-center -bottom-10" />
+                  <div
+                    className={`absolute h-full w-full opacity-0 bg-black/70 flex justify-center items-center -bottom-0 duration-500 ease-in-out ${
+                      showProjectDetails && "opacity-100"
+                    }`}
                   />
                   <div
                     className={` ${
                       showProjectDetails
                         ? "bottom-0 opacity-100 bg-whitesmoke text-blue"
-                        : "-bottom-28 bg-opacity-30 bg-light-blue text-light-yellow"
+                        : "-bottom-28 bg-opacity-30 bg-light-blue text-yellow"
                     }  h-36 absolute transition-all duration-500 ease-in-out border-l-4 border-l-yellow`}
                   >
                     <div className="flex justify-between items-center px-2 pt-2">
@@ -79,7 +83,7 @@ const Projects = () => {
                         </a>
                       </div>
                     </div>
-                    <p className="px-2 pt-1 text-[0.8rem] md:text-sm">
+                    <p className="px-2 pt-1 text-[0.8rem] md:text-sm text-blue">
                       {project.details}
                     </p>
                   </div>
