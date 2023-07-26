@@ -9,7 +9,7 @@ const TechStacks = () => {
       <div className="flex justify-evenly items-center mt-16 flex-wrap gap-4 md:gap-3 relative">
         {techStacksData?.map((techStack) => (
           <div
-            className="transition duration-500 ease-in-out relative flex flex-col gap-1 items-center justify-center bg-light-blue h-24 w-24 md:w-32 md:h-32 rounded-tl-md rounded-br-md rounded-tr-sm rounded-bl-sm border-l-8 border-l-yellow border-b-8 border-b-yellow transform backface-visibility-hidden -rotate-6 hover:rotate-0 "
+            className="transition duration-500 ease-in-out relative flex flex-col gap-1 items-center justify-center bg-light-blue h-24 w-24 md:w-32 md:h-32 rounded-tl-md rounded-br-md rounded-tr-sm rounded-bl-sm border-l-8 border-l-yellow border-b-8 border-b-yellow transform backface-visibility-hidden -rotate-6 hover:rotate-1 "
             key={techStack.id}
           >
             <p className="text-sm">{techStack.icon}</p>
