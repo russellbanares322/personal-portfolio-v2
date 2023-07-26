@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         poppins: "'Poppins', sans-serif",
       },
+      backfaceVisibility: {
+        hidden: "hidden",
+      },
       colors: {
         blue: "#020817",
         yellow: "#EAB208",

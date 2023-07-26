@@ -7,8 +7,12 @@ const Banner = () => {
   return (
     <div className="page-padding flex justify-between items-center flex-wrap">
       <div>
-        <p className="text-[2rem] md:text-[2.5rem] font-bold">Hi, I am</p>
-        <p className="text-[4rem] md:text-[4.8rem] font-bold">Russell</p>
+        <p className="text-[2rem] md:text-[2.5rem] font-bold light-text-shadow">
+          Hi, I am
+        </p>
+        <p className="text-[4rem] md:text-[4.8rem] font-bold medium-text-shadow">
+          Russell
+        </p>
         <p className="text-[0.9rem] md:text-[1rem]">
           a showcase of my projects and my abilities
         </p>

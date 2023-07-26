@@ -18,3 +18,10 @@
 .splide__arrow.splide__arrow--next {
   @apply translate-x-[42px] text-xs md:translate-x-[60px] md:text-base;
 }
+
+.light-text-shadow {
+  text-shadow: 1px 1px 0px #eab208;
+}
+.medium-text-shadow {
+  text-shadow: 1.7px 1px 0px #eab208;
+}
