@@ -25,7 +25,7 @@ const Navbar = () => {
       <ul
         className={`${
           isNavOpen && "h-[10rem] opacity-100"
-        } border-b opacity-0 h-0 md:h-full md:opacity-100 border-b-yellow bg-blue absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-500 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-5 text-sm mt-[0.85rem] pt-2 md:py-0 md:border-none md:mt-0`}
+        } border-b opacity-0 h-0 md:h-full md:opacity-100 border-b-yellow absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-500 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-5 text-sm mt-[0.85rem] pt-2 md:py-0 md:border-none md:mt-0`}
       >
         <li className="cursor-pointer">Home</li>
         <li className="cursor-pointer">About</li>

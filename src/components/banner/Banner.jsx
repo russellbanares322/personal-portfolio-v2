@@ -1,5 +1,5 @@
 import React from "react";
-import bannerIcon from "../../assets/banner-icon.svg";
+import bannerIcon from "../../assets/banner.svg";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import aboutIcon from "../../assets/about-icon.svg";
+import aboutIcon from "../../assets/about.svg";
 
 const About = () => {
   return (
