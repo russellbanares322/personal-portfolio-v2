@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { projectsData } from "../../data/ProjectsData";
-import { HiOutlineExternalLink, HiOutlineCode } from "react-icons/hi";
+import {
+  HiOutlineExternalLink,
+  HiOutlineCode,
+  HiOutlineCog,
+} from "react-icons/hi";
 
 const Projects = () => {
   const [hoveredProjectId, setHoveredProjectId] = useState(null);
@@ -43,7 +47,7 @@ const Projects = () => {
             return (
               <SplideSlide key={project.id}>
                 <div
-                  onMouseLeave={onHideProjectDetails}
+                  // onMouseLeave={onHideProjectDetails}
                   onMouseEnter={() => onShowProjectDetails(project.id)}
                   className="bg-whitesmoke relative overflow-hidden"
                 >
@@ -61,8 +65,8 @@ const Projects = () => {
                     className={` ${
                       showProjectDetails
                         ? "bottom-0 opacity-100 bg-whitesmoke text-blue"
-                        : "-bottom-28 bg-opacity-30 bg-light-blue text-yellow"
-                    }  h-36 absolute transition-all duration-500 ease-in-out border-l-4 border-l-yellow`}
+                        : "-bottom-36 bg-opacity-30 bg-light-blue text-yellow"
+                    } h-44 absolute transition-all duration-500 ease-in-out border-l-4 border-l-yellow`}
                   >
                     <div className="flex justify-between items-center px-2 pt-2">
                       <p className="font-bold text-[0.9rem] md:text-md opacity-100">
@@ -83,8 +87,12 @@ const Projects = () => {
                         </a>
                       </div>
                     </div>
-                    <p className="px-2 pt-1 text-[0.8rem] md:text-sm text-blue">
+                    <p className="px-2 pt-3 text-[0.85rem] md:text-sm text-blue">
                       {project.details}
+                    </p>
+                    <p className="px-2 pt-4 text-[0.75rem] md:text-[0.8rem] text-blue flex gap-1 items-center font-bold">
+                      <HiOutlineCog className="text-blue" size={17} />{" "}
+                      {project.technologiesUsed.join(" | ")}
                     </p>
                   </div>
                 </div>

@@ -4,7 +4,7 @@ export const projectsData = [
     title: "Password Generator",
     details:
       "A front-end mentor challenge, which enables user to generate a password depending on selected checkbox option and range slider for the password's length.",
-    technologies: ["ReactJS", "React Hot Toast"],
+    technologiesUsed: ["ReactJS", "React Hot Toast"],
     live_link: "https://pwgeneratorx.netlify.app/",
     source_code:
       "https://github.com/russellbanares322/password-generator-fem-challenge",
@@ -31,7 +31,7 @@ export const projectsData = [
     title: "Netflix Clone",
     details:
       "Web application that mimics the UI of Netflix, displays different types of movies using TMDB Api. And allows the user to save movie to favorites.",
-    technologies: ["ReactJS", "Axios", "Firebase", "ReactSplide"],
+    technologiesUsed: ["ReactJS", "Axios", "Firebase", "ReactSplide"],
     live_link: "https://netflix-clone-d2z2.onrender.com/",
     source_code: "https://github.com/russellbanares322/netflix-clone",
     thumbnail_image:
@@ -60,7 +60,7 @@ export const projectsData = [
     title: "ReactJS Firebase Crud",
     details:
       "A project that you can create, read, update and delete record. It also has an image upload functionality.",
-    technologies: ["ReactJS", "Firebase"],
+    technologiesUsed: ["ReactJS", "Firebase"],
     live_link: "https://russcrud.netlify.app/",
     source_code: "https://github.com/russellbanares322/react-firebase-crud",
     thumbnail_image:
@@ -83,7 +83,7 @@ export const projectsData = [
     title: "Property Management System",
     details:
       "Our capstone project which display different kinds of property, and allowing the user to set an appointment.",
-    technologies: ["ReactJS", "Firebase", "EmailJS", "Tawk.to Live Chat"],
+    technologiesUsed: ["ReactJS", "Firebase", "EmailJS", "Tawk.to Live Chat"],
     live_link: "https://onehomeph.onrender.com/",
     source_code: "https://github.com/russellbanares322/propertyfinder-app",
     thumbnail_image:
@@ -118,7 +118,7 @@ export const projectsData = [
     title: "Trackeroo",
     details:
       "A project that uses an api to fetch data about crypto currency prices, with the help of axios library.",
-    technologies: ["ReactJS", "Axios"],
+    technologiesUsed: ["ReactJS", "Axios"],
     live_link: "https://trackeroo.vercel.app/",
     source_code: "https://github.com/russellbanares322/cryptotrackerapp",
     thumbnail_image:
@@ -144,7 +144,7 @@ export const projectsData = [
     title: "Games List App",
     details:
       "Displaying different types of games with pagination, and axios library for api fetching.",
-    technologies: ["ReactJS", "Axios"],
+    technologiesUsed: ["ReactJS", "Axios"],
     live_link: "https://games-list-viewer.vercel.app/",
     source_code: "https://github.com/russellbanares322/games-list-app",
     thumbnail_image:
