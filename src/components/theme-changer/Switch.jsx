@@ -26,7 +26,7 @@ const Switch = () => {
     <div className="bg-light-blue flex gap-4 py-[0.4rem] rounded-md relative w-48">
       <div
         onClick={handleDarkMode}
-        className="w-full px-3 py-1 flex gap-1 items-center cursor-pointer text-center ml-[0.3rem]"
+        className="w-full px-3 py-1 flex gap-1 items-center cursor-pointer text-center ml-[0.2rem]"
       >
         {darkModeElement}
       </div>
@@ -38,8 +38,8 @@ const Switch = () => {
       </div>
       <div
         className={`cursor-pointer absolute ${
-          isDarkMode ? "left-1" : "right-1"
-        } px-3 py-1 rounded-md top-[0.12rem] bg-blue w-[5.6rem] h-[2.3rem] flex gap-1 items-center`}
+          isDarkMode ? "left-[0.1rem]" : "right-[0.1rem]"
+        } transition duration-500 ease-in-out px-3 py-1 rounded-md top-[0.12rem] bg-blue w-[6rem] h-[2.3rem] flex gap-1 items-center`}
       >
         {isDarkMode ? darkModeElement : lightModeElement}
       </div>
