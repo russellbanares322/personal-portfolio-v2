@@ -4,6 +4,7 @@ export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark");
+  const isDarkMode = theme === "dark";
 
   const handleLightMode = () => {
     setTheme("light");
@@ -19,11 +20,15 @@ const ThemeProvider = ({ children }) => {
     const checkTheme = localStorage.getItem("pageTheme");
     if (checkTheme) {
       setTheme(checkTheme);
+    } else {
+      localStorage.setItem("pageTheme", theme);
     }
-  }, [theme]);
+  }, []);
 
   return (
-    <ThemeContext.Provider value={{ theme, handleLightMode, handleDarkMode }}>
+    <ThemeContext.Provider
+      value={{ isDarkMode, handleLightMode, handleDarkMode }}
+    >
       {children}
     </ThemeContext.Provider>
   );

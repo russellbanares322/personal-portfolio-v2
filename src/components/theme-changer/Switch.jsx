@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { HiOutlineSun, HiOutlineMoon } from "react-icons/hi";
+import { ThemeContext } from "../context/ThemeContext";
 
 // HiSun
 // HiMoon
 const Switch = () => {
+  const { isDarkMode, handleLightMode, handleDarkMode } =
+    useContext(ThemeContext);
+
   const lightModeElement = (
     <>
       <HiOutlineSun size={20} />
@@ -19,15 +23,25 @@ const Switch = () => {
   );
 
   return (
-    <div className="bg-light-blue flex gap-5 py-[0.3rem] rounded-md relative">
-      <div className="w-full px-3 py-1 flex gap-1 items-center cursor-pointer">
+    <div className="bg-light-blue flex gap-4 py-[0.4rem] rounded-md relative w-48">
+      <div
+        onClick={handleDarkMode}
+        className="w-full px-3 py-1 flex gap-1 items-center cursor-pointer text-center ml-[0.3rem]"
+      >
         {darkModeElement}
       </div>
-      <div className="w-full px-3 py-1 flex gap-1 items-center cursor-pointer">
+      <div
+        onClick={handleLightMode}
+        className="w-full px-3 py-1 flex gap-1 items-center cursor-pointer text-center pr-[3rem]"
+      >
         {lightModeElement}
       </div>
-      <div className="cursor-pointer absolute left-1 px-3 py-1 rounded-md top-[0.2rem] bg-blue w-[5.5rem] h-[2rem] flex gap-1 items-center">
-        {darkModeElement}
+      <div
+        className={`cursor-pointer absolute ${
+          isDarkMode ? "left-1" : "right-1"
+        } px-3 py-1 rounded-md top-[0.12rem] bg-blue w-[5.6rem] h-[2.3rem] flex gap-1 items-center`}
+      >
+        {isDarkMode ? darkModeElement : lightModeElement}
       </div>
     </div>
   );
