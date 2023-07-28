@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 import Switch from "../theme-changer/Switch";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [activeNavLink, setActiveNavLink] = useState("");
   const [blurNavbar, setBlurNavbar] = useState(false);
+  const { isDarkMode } = useContext(ThemeContext);
 
   const handleBlurNavbar = () => {
     if (window.scrollY >= 80) {
@@ -30,9 +32,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-blue ${
+      className={`${
+        isDarkMode
+          ? "bg-blue text-white border-b border-b-yellow"
+          : "bg-white text-blue border-b border-b-blue"
+      } ${
         blurNavbar && "bg-blue/10 backdrop-filter backdrop-blur-lg"
-      } z-50 md:flex md:justify-start md:items-center border-b border-b-yellow px-9 md:px-28 py-2 fixed w-full`}
+      } z-50 md:flex md:justify-start md:items-center  px-9 md:px-28 py-2 fixed w-full`}
     >
       <div className="flex items-center justify-between mr-0 md:flex md:mr-6">
         <img className="h-16 w-16 object-contain" src={logo} />
@@ -46,9 +52,11 @@ const Navbar = () => {
         </div>
       </div>
       <ul
-        className={`${
-          isNavOpen && "h-[18rem] opacity-100"
-        } bg-blue border-b opacity-0 h-0 md:h-full md:opacity-100 border-b-yellow absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-500 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-7 text-sm mt-[0.55rem] pt-2 md:py-0 md:bg-transparent md:border-none md:mt-0`}
+        className={`${isNavOpen && "h-[18rem] opacity-100"} ${
+          isDarkMode
+            ? "bg-blue border-b border-b-yellow"
+            : "bg-white border-b border-b-blue"
+        }  opacity-0 h-0 md:h-full md:opacity-100 absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-300 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-7 text-sm mt-[0.55rem] pt-2 md:py-0 md:bg-transparent md:border-none md:mt-0`}
       >
         <li
           onClick={() => handleChangeActiveNavLink("Home")}

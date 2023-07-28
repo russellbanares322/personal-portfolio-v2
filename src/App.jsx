@@ -8,8 +8,8 @@ function App() {
   return (
     <div
       className={`${
-        isDarkMode ? "bg-blue text-white" : "bg-white text-blue"
-      } transition-all ease-in-out duration-300  min-h-[100vh] h-full overflow-x-hidden`}
+        isDarkMode ? "bg-blue" : "bg-white"
+      } ease-in-out duration-300  min-h-[100vh] h-full overflow-x-hidden`}
     >
       <Home />
       <Footer />
