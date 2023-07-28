@@ -20,7 +20,11 @@ const Switch = () => {
   );
 
   return (
-    <div className="bg-light-blue flex gap-4 py-[0.4rem] rounded-md relative w-48">
+    <div
+      className={`${
+        isDarkMode ? "bg-light-blue" : "bg-gray-200"
+      } flex gap-4 py-[0.4rem] rounded-md relative w-48`}
+    >
       <div
         onClick={handleToggleTheme}
         className="w-full px-3 py-1 flex gap-1 items-center cursor-pointer text-center ml-[0.2rem] z-50"
@@ -35,8 +39,10 @@ const Switch = () => {
       </div>
       <div
         className={`cursor-pointer absolute ${
-          isDarkMode ? "translate-x-[0.2rem]" : " translate-x-[5.8rem]"
-        } transition duration-300 ease-in-out px-3 py-1 rounded-md top-[0.12rem] bg-blue w-[6rem] h-[2.3rem] flex gap-1 items-center`}
+          isDarkMode
+            ? "translate-x-[0.2rem] bg-blue"
+            : " translate-x-[5.8rem] bg-white"
+        } transition duration-300 ease-in-out px-3 py-1 rounded-md top-[0.12rem]  w-[6rem] h-[2.3rem] flex gap-1 items-center`}
       />
     </div>
   );
