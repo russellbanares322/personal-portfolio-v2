@@ -10,10 +10,10 @@ const Banner = () => {
         <p className="text-[2rem] md:text-[2.5rem] font-bold light-text-shadow">
           Hi, I am
         </p>
-        <p className="text-[4rem] md:text-[4.8rem] font-bold medium-text-shadow">
+        <p className="text-[4rem] md:text-[7rem] font-bold medium-text-shadow">
           Russell
         </p>
-        <p className="text-[0.9rem] md:text-[1rem]">
+        <p className="text-[0.9rem] md:text-[1.3rem]">
           a showcase of my projects and my abilities
         </p>
         <div className="flex gap-2 mt-5">
