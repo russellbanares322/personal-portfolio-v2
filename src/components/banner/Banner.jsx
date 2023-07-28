@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import bannerIcon from "../../assets/banner.svg";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Banner = () => {
+  const { isDarkMode } = useContext(ThemeContext);
+
   return (
-    <div className="page-padding flex justify-between items-center flex-wrap">
+    <div
+      className={`${
+        isDarkMode ? "text-white" : "text-blue"
+      } page-padding flex justify-between items-center flex-wrap`}
+    >
       <div>
         <p className="text-[2rem] md:text-[2.5rem] font-bold light-text-shadow">
           Hi, I am
