@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import contactIcon from "../../assets/contact.svg";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Contact = () => {
+  const { isDarkMode } = useContext(ThemeContext);
+
   return (
-    <div className="page-padding mb-20">
+    <div
+      className={`${
+        isDarkMode ? "text-white" : "text-blue"
+      } page-padding mb-20`}
+    >
       <p className="section-title">GET IN TOUCH</p>
       <div className="flex justify-around items-center gap-12 mt-16 relative flex-wrap">
         <div className="w-[33rem] z-20">
