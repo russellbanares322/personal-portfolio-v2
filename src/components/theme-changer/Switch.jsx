@@ -5,8 +5,7 @@ import { ThemeContext } from "../context/ThemeContext";
 // HiSun
 // HiMoon
 const Switch = () => {
-  const { isDarkMode, handleLightMode, handleDarkMode } =
-    useContext(ThemeContext);
+  const { isDarkMode, handleToggleTheme } = useContext(ThemeContext);
 
   const lightModeElement = (
     <>
@@ -25,13 +24,13 @@ const Switch = () => {
   return (
     <div className="bg-light-blue flex gap-4 py-[0.4rem] rounded-md relative w-48">
       <div
-        onClick={handleDarkMode}
+        onClick={handleToggleTheme}
         className="w-full px-3 py-1 flex gap-1 items-center cursor-pointer text-center ml-[0.2rem]"
       >
         {darkModeElement}
       </div>
       <div
-        onClick={handleLightMode}
+        onClick={handleToggleTheme}
         className="w-full px-3 py-1 flex gap-1 items-center cursor-pointer text-center pr-[3rem]"
       >
         {lightModeElement}
