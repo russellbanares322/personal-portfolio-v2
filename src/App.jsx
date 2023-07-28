@@ -1,9 +1,16 @@
+import { useContext } from "react";
+import { ThemeContext } from "./components/context/ThemeContext";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 
 function App() {
+  const { isDarkMode } = useContext(ThemeContext);
   return (
-    <div className="bg-blue min-h-[100vh] h-full text-white overflow-x-hidden">
+    <div
+      className={`${
+        isDarkMode ? "bg-blue text-white" : "bg-white text-blue"
+      } transition-all ease-in-out duration-300  min-h-[100vh] h-full overflow-x-hidden`}
+    >
       <Home />
       <Footer />
     </div>
