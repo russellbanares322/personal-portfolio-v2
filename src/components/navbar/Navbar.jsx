@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 import Switch from "../theme-changer/Switch";
@@ -6,8 +6,17 @@ import Switch from "../theme-changer/Switch";
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [activeNavLink, setActiveNavLink] = useState("");
+  const [blurNavbar, setBlurNavbar] = useState(false);
 
-  const handleChangeActiveLink = (currentNavLink) => {
+  const handleBlurNavbar = () => {
+    if (window.scrollY >= 80) {
+      setBlurNavbar(true);
+    } else {
+      setBlurNavbar(false);
+    }
+  };
+
+  const handleChangeActiveNavLink = (currentNavLink) => {
     setActiveNavLink(currentNavLink);
   };
 
@@ -15,8 +24,16 @@ const Navbar = () => {
     setIsNavOpen(!isNavOpen);
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleBlurNavbar);
+  }, [blurNavbar]);
+
   return (
-    <nav className="bg-blue z-50 md:flex md:justify-start md:items-center border-b border-b-yellow px-9 md:px-28 py-2 fixed w-full">
+    <nav
+      className={`bg-blue ${
+        blurNavbar && "bg-blue/10 backdrop-filter backdrop-blur-lg"
+      } z-50 md:flex md:justify-start md:items-center border-b border-b-yellow px-9 md:px-28 py-2 fixed w-full`}
+    >
       <div className="flex items-center justify-between mr-0 md:flex md:mr-6">
         <img className="h-16 w-16 object-contain" src={logo} />
         <div onClick={handleToggleNav}>
@@ -34,7 +51,7 @@ const Navbar = () => {
         } bg-blue border-b opacity-0 h-0 md:h-full md:opacity-100 border-b-yellow absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-500 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-7 text-sm mt-[0.55rem] pt-2 md:py-0 md:bg-transparent md:border-none md:mt-0`}
       >
         <li
-          onClick={() => handleChangeActiveLink("Home")}
+          onClick={() => handleChangeActiveNavLink("Home")}
           className={` ${
             activeNavLink === "Home" && "text-yellow"
           } cursor-pointer pt-6 md:pt-0 nav-links-style`}
@@ -42,7 +59,7 @@ const Navbar = () => {
           Home
         </li>
         <li
-          onClick={() => handleChangeActiveLink("About")}
+          onClick={() => handleChangeActiveNavLink("About")}
           className={` ${
             activeNavLink === "About" && "text-yellow"
           } cursor-pointer nav-links-style`}
