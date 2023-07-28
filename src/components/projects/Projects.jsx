@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { projectsData } from "../../data/ProjectsData";
 import {
@@ -6,9 +6,11 @@ import {
   HiOutlineCode,
   HiOutlineCog,
 } from "react-icons/hi";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Projects = () => {
   const [hoveredProjectId, setHoveredProjectId] = useState(null);
+  const { isDarkMode } = useContext(ThemeContext);
 
   const onShowProjectDetails = (selectedProjectId) => {
     setHoveredProjectId(selectedProjectId);
@@ -19,7 +21,11 @@ const Projects = () => {
   };
   return (
     <div className="page-padding">
-      <p className="section-title">Projects</p>
+      <p
+        className={`${isDarkMode ? "text-white" : "text-black"} section-title`}
+      >
+        Projects
+      </p>
       <div className="mt-16">
         <Splide
           options={{
