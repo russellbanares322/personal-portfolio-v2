@@ -28,10 +28,12 @@ const Navbar = () => {
           isNavOpen && "h-[15rem] opacity-100"
         } bg-blue border-b opacity-0 h-0 md:h-full md:opacity-100 border-b-yellow absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-500 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-5 text-sm mt-[0.85rem] pt-2 md:py-0 md:border-none md:mt-0`}
       >
-        <li className="cursor-pointer pt-6 md:pt-0">Home</li>
-        <li className="cursor-pointer">About</li>
-        <li className="cursor-pointer">Projects</li>
-        <li className="cursor-pointer mr-0 md:mr-auto">Contact</li>
+        <li className="cursor-pointer pt-6 md:pt-0 nav-links-style">Home</li>
+        <li className="cursor-pointer nav-links-style">About</li>
+        <li className="cursor-pointer nav-links-style">Projects</li>
+        <li className="cursor-pointer mr-0 md:mr-auto nav-links-style">
+          Contact
+        </li>
         <li>
           <Switch />
         </li>
