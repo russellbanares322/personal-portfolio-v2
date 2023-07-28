@@ -38,7 +38,7 @@ const Switch = () => {
       </div>
       <div
         className={`cursor-pointer absolute ${
-          isDarkMode ? "left-[0.1rem]" : "right-[0.1rem]"
+          isDarkMode ? "translate-x-[0.2rem]" : " translate-x-[5.8rem]"
         } transition duration-500 ease-in-out px-3 py-1 rounded-md top-[0.12rem] bg-blue w-[6rem] h-[2.3rem] flex gap-1 items-center`}
       >
         {isDarkMode ? darkModeElement : lightModeElement}
