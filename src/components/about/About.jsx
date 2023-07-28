@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import aboutIcon from "../../assets/about.svg";
+import { ThemeContext } from "../context/ThemeContext";
 
 const About = () => {
+  const { isDarkMode } = useContext(ThemeContext);
+
   return (
-    <div className="page-padding">
+    <div className={`${isDarkMode ? "text-white" : "text-black"} page-padding`}>
       <p className="section-title">About</p>
       <div className="flex justify-around items-center gap-12 mt-16 flex-wrap">
         <img
@@ -17,8 +20,16 @@ const About = () => {
             an enthusiastic learner, always eager to embrace new skills and
             knowledge that can further enhance my abilities.
           </p>
-          <div className="mt-10 md:mt-0 bg-light-yellow w-80 h-80 absolute -top-10 -right-24 rounded-full opacity-10" />
-          <div className="mt-10 md:mt-0 bg-light-yellow h-20 w-20 absolute -top-8 -left-5 rounded-full opacity-10" />
+          <div
+            className={`mt-10 md:mt-0 ${
+              isDarkMode ? "bg-light-yellow" : "bg-blue"
+            }  w-80 h-80 absolute -top-10 -right-24 rounded-full opacity-10`}
+          />
+          <div
+            className={`mt-10 md:mt-0  ${
+              isDarkMode ? "bg-light-yellow" : "bg-blue"
+            } h-20 w-20 absolute -top-8 -left-5 rounded-full opacity-10`}
+          />
         </div>
       </div>
     </div>
