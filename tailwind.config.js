@@ -3,6 +3,30 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      keyframes: {
+        type: {
+          "0%": {
+            transform: "translateX(-10px)",
+          },
+          "80%": {
+            transform: "translateX(10px)",
+          },
+          "100%": {
+            transform: "translateX(-12px)",
+          },
+        },
+        blink: {
+          "0%": {
+            opacity: "0",
+          },
+          "50%": { opacity: ".5" },
+          "100%": { opacity: "1" },
+        },
+      },
+      animation: {
+        "typing-hand": "type 2s linear infinite",
+        blink: "blink 1s linear infinite",
+      },
       fontFamily: {
         poppins: "'Poppins', sans-serif",
       },

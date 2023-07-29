@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import bannerIcon from "../../assets/banner.svg";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { PageContext } from "../../context/PageContext";
+import BannerImage from "../../assets/svg/BannerImage";
 
 const Banner = () => {
   const { isDarkMode } = useContext(PageContext);
@@ -11,7 +11,7 @@ const Banner = () => {
     <div
       className={`${
         isDarkMode ? "text-white" : "text-blue"
-      } page-padding flex justify-between items-center flex-wrap`}
+      } page-padding flex-1 lg:flex justify-between items-center`}
     >
       <div>
         <p className="text-[2rem] md:text-[2.5rem] font-bold light-text-shadow">
@@ -36,10 +36,7 @@ const Banner = () => {
         </div>
       </div>
       <div>
-        <img
-          className="object-cover w-auto bg-center mt-16 mx-auto md:mt-0 md:mx-0 sm:h-[15rem] md:h-[15rem] lg-[25rem] xl:h-[25rem]"
-          src={bannerIcon}
-        />
+        <BannerImage />
       </div>
     </div>
   );
