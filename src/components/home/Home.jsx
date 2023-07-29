@@ -5,17 +5,19 @@ import Contact from "../contact/Contact";
 import Navbar from "../navbar/Navbar";
 import Projects from "../projects/Projects";
 import TechStacks from "../tech-stacks/TechStacks";
+import ScrollUpButton from "./ScrollUpButton";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Banner />
       <Projects />
       <About />
       <TechStacks />
       <Contact />
-    </div>
+      <ScrollUpButton />
+    </>
   );
 };
 
