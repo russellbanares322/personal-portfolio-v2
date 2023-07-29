@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { ThemeContext } from "./components/context/ThemeContext";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
+import { PageContext } from "./context/PageContext";
 
 function App() {
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkMode } = useContext(PageContext);
   return (
     <div
       className={`${

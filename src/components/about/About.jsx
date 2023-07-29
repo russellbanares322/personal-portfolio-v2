@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import aboutIcon from "../../assets/about.svg";
-import { ThemeContext } from "../context/ThemeContext";
+import { PageContext } from "../../context/PageContext";
 
 const About = () => {
-  const { isDarkMode, aboutRef } = useContext(ThemeContext);
+  const { isDarkMode, aboutRef } = useContext(PageContext);
 
   return (
     <div

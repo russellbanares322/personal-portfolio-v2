@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import contactIcon from "../../assets/contact.svg";
-import { ThemeContext } from "../context/ThemeContext";
+import { PageContext } from "../../context/PageContext";
 
 const Contact = () => {
-  const { isDarkMode, contactRef } = useContext(ThemeContext);
+  const { isDarkMode, contactRef } = useContext(PageContext);
 
   return (
     <div

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { HiSun, HiOutlineSun, HiMoon, HiOutlineMoon } from "react-icons/hi";
-import { ThemeContext } from "../context/ThemeContext";
+import { PageContext } from "../../context/PageContext";
 
 const Switch = () => {
-  const { isDarkMode, handleToggleTheme } = useContext(ThemeContext);
+  const { isDarkMode, handleToggleTheme } = useContext(PageContext);
 
   const lightModeElement = (
     <>

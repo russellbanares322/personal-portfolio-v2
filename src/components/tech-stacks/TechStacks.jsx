@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { techStacksData } from "../../data/TechstackData";
 import { HiBookmark } from "react-icons/hi";
-import { ThemeContext } from "../context/ThemeContext";
+import { PageContext } from "../../context/PageContext";
 
 const TechStacks = () => {
-  const { isDarkMode, techStacksRef } = useContext(ThemeContext);
+  const { isDarkMode, techStacksRef } = useContext(PageContext);
 
   return (
     <div

@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import "@splidejs/react-splide/css";
-import ThemeProvider from "./components/context/ThemeContext.jsx";
+import PageProvider from "./context/PageContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ThemeProvider>
+    <PageProvider>
       <App />
-    </ThemeProvider>
+    </PageProvider>
   </React.StrictMode>
 );

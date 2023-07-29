@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import bannerIcon from "../../assets/banner.svg";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
-import { ThemeContext } from "../context/ThemeContext";
+import { PageContext } from "../../context/PageContext";
 
 const Banner = () => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkMode } = useContext(PageContext);
 
   return (
     <div

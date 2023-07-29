@@ -1,8 +1,8 @@
 import { createContext, useEffect, useRef, useState } from "react";
 
-export const ThemeContext = createContext();
+export const PageContext = createContext();
 
-const ThemeProvider = ({ children }) => {
+const PageProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark");
   const isDarkMode = theme === "dark";
   const projectsRef = useRef(null);
@@ -45,7 +45,7 @@ const ThemeProvider = ({ children }) => {
   }, []);
 
   return (
-    <ThemeContext.Provider
+    <PageContext.Provider
       value={{
         isDarkMode,
         handleToggleTheme,
@@ -58,8 +58,8 @@ const ThemeProvider = ({ children }) => {
       }}
     >
       {children}
-    </ThemeContext.Provider>
+    </PageContext.Provider>
   );
 };
 
-export default ThemeProvider;
+export default PageProvider;

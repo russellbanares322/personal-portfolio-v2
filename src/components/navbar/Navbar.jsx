@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 import Switch from "../theme-changer/Switch";
-import { ThemeContext } from "../context/ThemeContext";
+import { PageContext } from "../../context/PageContext";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -15,7 +15,7 @@ const Navbar = () => {
     contactRef,
     handleScrollToSection,
     handleScrollToTop,
-  } = useContext(ThemeContext);
+  } = useContext(PageContext);
 
   const handleBlurNavbar = () => {
     if (window.scrollY >= 80) {

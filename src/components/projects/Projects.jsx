@@ -6,11 +6,11 @@ import {
   HiOutlineCode,
   HiOutlineCog,
 } from "react-icons/hi";
-import { ThemeContext } from "../context/ThemeContext";
+import { PageContext } from "../../context/PageContext";
 
 const Projects = () => {
   const [hoveredProjectId, setHoveredProjectId] = useState(null);
-  const { isDarkMode, projectsRef } = useContext(ThemeContext);
+  const { isDarkMode, projectsRef } = useContext(PageContext);
 
   const onShowProjectDetails = (selectedProjectId) => {
     setHoveredProjectId(selectedProjectId);
