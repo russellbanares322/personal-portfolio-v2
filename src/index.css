@@ -12,7 +12,7 @@
   @apply shadow-md border border-gray-300  rounded-md py-1 px-2 focus:outline-blue focus:border-none h-10;
 }
 .section-title {
-  @apply text-[2rem] font-medium uppercase relative after:absolute after:left-0 after:bottom-0 after:w-12 after:rounded-lg after:h-1 after:bg-yellow;
+  @apply text-[2rem] font-semibold uppercase relative after:absolute after:left-0 after:bottom-0 after:w-12 after:rounded-lg after:h-1 after:bg-yellow;
 }
 .page-padding {
   @apply px-9 md:px-28 pt-36 md:pt-48;

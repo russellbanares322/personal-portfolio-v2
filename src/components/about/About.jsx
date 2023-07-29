@@ -3,10 +3,13 @@ import aboutIcon from "../../assets/about.svg";
 import { ThemeContext } from "../context/ThemeContext";
 
 const About = () => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkMode, aboutRef } = useContext(ThemeContext);
 
   return (
-    <div className={`${isDarkMode ? "text-white" : "text-black"} page-padding`}>
+    <div
+      ref={aboutRef}
+      className={`${isDarkMode ? "text-white" : "text-black"} page-padding`}
+    >
       <p className="section-title">About</p>
       <div className="flex justify-around items-center gap-12 mt-16 flex-wrap">
         <img
@@ -14,7 +17,7 @@ const About = () => {
           src={aboutIcon}
         />
         <div className="w-[33rem] relative">
-          <p className="leading-8 w-full mt-10 md:mt-0 text-sm md:text-[1rem]">
+          <p className="leading-8 w-full mt-10 md:mt-0 text-sm md:text-[1rem] font-medium">
             My passion for technology and a strong desire to continously improve
             myself have been the driving forces behind my academic journey. I'm
             an enthusiastic learner, always eager to embrace new skills and

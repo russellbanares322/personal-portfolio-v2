@@ -8,7 +8,14 @@ const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [activeNavLink, setActiveNavLink] = useState("");
   const [blurNavbar, setBlurNavbar] = useState(false);
-  const { isDarkMode } = useContext(ThemeContext);
+  const {
+    isDarkMode,
+    aboutRef,
+    projectsRef,
+    contactRef,
+    handleScrollToSection,
+    handleScrollToTop,
+  } = useContext(ThemeContext);
 
   const handleBlurNavbar = () => {
     if (window.scrollY >= 80) {
@@ -65,7 +72,10 @@ const Navbar = () => {
         }  opacity-0 h-0 md:h-full md:opacity-100 absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-300 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-7 text-sm mt-[0.55rem] pt-2 md:py-0 md:bg-transparent md:border-none md:mt-0`}
       >
         <li
-          onClick={() => handleChangeActiveNavLink("Home")}
+          onClick={() => {
+            handleChangeActiveNavLink("Home");
+            handleScrollToTop();
+          }}
           className={` ${
             activeNavLink === "Home" && "text-yellow"
           } cursor-pointer pt-6 md:pt-0 nav-links-style`}
@@ -73,7 +83,10 @@ const Navbar = () => {
           Home
         </li>
         <li
-          onClick={() => handleChangeActiveNavLink("About")}
+          onClick={() => {
+            handleChangeActiveNavLink("About");
+            handleScrollToSection(aboutRef);
+          }}
           className={` ${
             activeNavLink === "About" && "text-yellow"
           } cursor-pointer nav-links-style`}
@@ -81,7 +94,10 @@ const Navbar = () => {
           About
         </li>
         <li
-          onClick={() => handleChangeActiveLink("Projects")}
+          onClick={() => {
+            handleChangeActiveNavLink("Projects");
+            handleScrollToSection(projectsRef);
+          }}
           className={` ${
             activeNavLink === "Projects" && "text-yellow"
           } cursor-pointer nav-links-style`}
@@ -89,7 +105,10 @@ const Navbar = () => {
           Projects
         </li>
         <li
-          onClick={() => handleChangeActiveLink("Contact")}
+          onClick={() => {
+            handleChangeActiveNavLink("Contact");
+            handleScrollToSection(contactRef);
+          }}
           className={` ${
             activeNavLink === "Contact" && "text-yellow"
           } cursor-pointer mr-0 md:mr-auto nav-links-style`}

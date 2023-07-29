@@ -10,7 +10,7 @@ import { ThemeContext } from "../context/ThemeContext";
 
 const Projects = () => {
   const [hoveredProjectId, setHoveredProjectId] = useState(null);
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkMode, projectsRef } = useContext(ThemeContext);
 
   const onShowProjectDetails = (selectedProjectId) => {
     setHoveredProjectId(selectedProjectId);
@@ -20,7 +20,7 @@ const Projects = () => {
     setHoveredProjectId(null);
   };
   return (
-    <div className="page-padding">
+    <div ref={projectsRef} className="page-padding">
       <p
         className={`${isDarkMode ? "text-white" : "text-black"} section-title`}
       >

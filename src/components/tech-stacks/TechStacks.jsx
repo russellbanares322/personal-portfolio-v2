@@ -4,10 +4,13 @@ import { HiBookmark } from "react-icons/hi";
 import { ThemeContext } from "../context/ThemeContext";
 
 const TechStacks = () => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkMode, techStacksRef } = useContext(ThemeContext);
 
   return (
-    <div className={`${isDarkMode ? "text-white" : "text-blue"} page-padding`}>
+    <div
+      ref={techStacksRef}
+      className={`${isDarkMode ? "text-white" : "text-blue"} page-padding`}
+    >
       <p className="section-title">Tech stacks</p>
       <div className="flex justify-evenly items-center mt-16 flex-wrap gap-4 md:gap-3 relative">
         {techStacksData?.map((techStack) => (

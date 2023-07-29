@@ -3,10 +3,11 @@ import contactIcon from "../../assets/contact.svg";
 import { ThemeContext } from "../context/ThemeContext";
 
 const Contact = () => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const { isDarkMode, contactRef } = useContext(ThemeContext);
 
   return (
     <div
+      ref={contactRef}
       className={`${
         isDarkMode ? "text-white" : "text-blue"
       } page-padding mb-20`}
@@ -14,7 +15,11 @@ const Contact = () => {
       <p className="section-title">GET IN TOUCH</p>
       <div className="flex justify-around items-center gap-12 mt-16 relative flex-wrap">
         <div className="w-[33rem] z-20">
-          <form className="bg-white mt-[2rem] md:mt-0 relative w-[25rem] h-full text-blue flex flex-col p-5 rounded-md border-l-4 border-l-yellow border-b-4 border-b-yellow">
+          <form
+            className={`bg-white mt-[2rem] md:mt-0 relative w-[25rem] h-full text-blue flex flex-col p-5 rounded-md border-l-4 border-l-yellow border-b-4 border-b-yellow ${
+              !isDarkMode && "border-t border-r"
+            }`}
+          >
             <label className="my-1 font-semibold">Name</label>
             <input className="input-style" type="text" />
             <label className="my-1 font-semibold">Email Address</label>

@@ -1,10 +1,29 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 
 export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark");
   const isDarkMode = theme === "dark";
+  const projectsRef = useRef(null);
+  const aboutRef = useRef(null);
+  const techStacksRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const handleScrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
+
+  const handleScrollToTop = () => {
+    window.scroll({
+      top: 100,
+      left: 100,
+      behavior: "smooth",
+    });
+  };
 
   const handleToggleTheme = () => {
     let selectedTheme = "";
@@ -26,7 +45,18 @@ const ThemeProvider = ({ children }) => {
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ isDarkMode, handleToggleTheme }}>
+    <ThemeContext.Provider
+      value={{
+        isDarkMode,
+        handleToggleTheme,
+        handleScrollToSection,
+        handleScrollToTop,
+        projectsRef,
+        aboutRef,
+        techStacksRef,
+        contactRef,
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );
