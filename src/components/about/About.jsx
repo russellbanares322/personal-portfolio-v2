@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import aboutIcon from "../../assets/about.svg";
+import aboutIcon from "../../assets/svg/about.svg";
 import { PageContext } from "../../context/PageContext";
 
 const About = () => {

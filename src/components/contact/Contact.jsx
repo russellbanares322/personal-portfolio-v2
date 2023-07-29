@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import contactIcon from "../../assets/contact.svg";
+import contactIcon from "../../assets/svg/contact.svg";
 import { PageContext } from "../../context/PageContext";
 
 const Contact = () => {
