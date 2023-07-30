@@ -50,7 +50,7 @@ const Projects = () => {
             return (
               <SplideSlide key={project.id}>
                 <div
-                  // onMouseLeave={onHideProjectDetails}
+                  onMouseLeave={onHideProjectDetails}
                   onMouseEnter={() => onShowProjectDetails(project.id)}
                   className="bg-whitesmoke relative overflow-hidden"
                 >
