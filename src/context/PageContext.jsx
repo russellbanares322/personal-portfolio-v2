@@ -4,6 +4,7 @@ export const PageContext = createContext();
 
 const PageProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark");
+  const [activeNavLink, setActiveNavLink] = useState("");
   const isDarkMode = theme === "dark";
   const projectsRef = useRef(null);
   const aboutRef = useRef(null);
@@ -23,6 +24,11 @@ const PageProvider = ({ children }) => {
       left: 0,
       behavior: "smooth",
     });
+    setActiveNavLink("Home");
+  };
+
+  const handleChangeActiveNavLink = (currentActiveNavLink) => {
+    setActiveNavLink(currentActiveNavLink);
   };
 
   const handleToggleTheme = () => {
@@ -51,6 +57,8 @@ const PageProvider = ({ children }) => {
         handleToggleTheme,
         handleScrollToSection,
         handleScrollToTop,
+        handleChangeActiveNavLink,
+        activeNavLink,
         projectsRef,
         aboutRef,
         techStacksRef,
