@@ -9,7 +9,13 @@
   @apply bg-yellow text-black px-4 md:px-5 py-2 rounded-md transition ease-in-out duration-500 hover:bg-light-blue hover:text-white;
 }
 .input-style {
-  @apply shadow-md border border-gray-300  rounded-md py-1 px-2 focus:outline-blue focus:border-none h-10;
+  @apply shadow-md rounded-md py-1 px-2 focus:outline-blue focus:border-none h-10;
+}
+.textarea-style {
+  @apply rounded-md shadow-md py-1 px-2 h-20 focus:outline-blue focus:border-none;
+}
+.input-label-style {
+  @apply my-1 font-semibold relative after:absolute after:content-['*'] after:text-red after:pl-1;
 }
 .section-title {
   @apply text-[2rem] font-semibold uppercase relative after:absolute after:left-0 after:bottom-0 after:w-12 after:rounded-lg after:h-1 after:bg-yellow;

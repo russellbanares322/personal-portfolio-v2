@@ -40,6 +40,7 @@ export default {
         "light-yellow": "#F3CB59",
         whitesmoke: "#F9EFC9",
         "light-blue": "#263238",
+        red: "#FF0808",
       },
     },
   },
