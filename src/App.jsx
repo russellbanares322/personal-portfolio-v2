@@ -5,6 +5,7 @@ import { PageContext } from "./context/PageContext";
 
 function App() {
   const { isDarkMode } = useContext(PageContext);
+
   return (
     <div
       className={`${

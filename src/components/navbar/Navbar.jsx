@@ -62,11 +62,11 @@ const Navbar = () => {
         </div>
       </div>
       <ul
-        className={`${isNavOpen && "h-[18rem] opacity-100"} ${
+        className={`${isNavOpen ? "translate-y-0" : "-translate-y-96"} ${
           isDarkMode
             ? "bg-blue border-b border-b-yellow"
             : "bg-white border-b border-b-blue"
-        }  opacity-0 h-0 md:h-full md:opacity-100 absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-300 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-7 text-sm pt-2 md:py-0 md:bg-transparent md:border-none md:mt-0`}
+        } pb-7 md:translate-y-0 md:h-full md:opacity-100 absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-300 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-7 text-sm pt-2 md:py-0 md:bg-transparent md:border-none md:mt-0`}
       >
         <li
           onClick={() => {

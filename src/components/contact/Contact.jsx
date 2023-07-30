@@ -69,7 +69,7 @@ const Contact = () => {
     >
       <p className="section-title">GET IN TOUCH</p>
       <div className="flex justify-around items-center gap-12 mt-16 relative flex-wrap">
-        <div className="w-[33rem] z-20">
+        <div className=" w-[33rem] z-20">
           <form
             onSubmit={handleSubmit}
             className={`bg-white mt-[2rem] md:mt-0 relative w-[25rem] h-full text-blue flex flex-col p-5 rounded-md border-l-4 border-l-yellow border-b-4 border-b-yellow ${
