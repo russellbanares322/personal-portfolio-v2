@@ -24,7 +24,7 @@ const PageProvider = ({ children }) => {
       left: 0,
       behavior: "smooth",
     });
-    setActiveNavLink("Home");
+    setActiveNavLink("");
   };
 
   const handleChangeActiveNavLink = (currentActiveNavLink) => {

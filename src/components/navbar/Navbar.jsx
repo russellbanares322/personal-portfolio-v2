@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/files/logo.png";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
 import Switch from "../theme-changer/Switch";
 import { PageContext } from "../../context/PageContext";
@@ -66,7 +66,7 @@ const Navbar = () => {
           isDarkMode
             ? "bg-blue border-b border-b-yellow"
             : "bg-white border-b border-b-blue"
-        }  opacity-0 h-0 md:h-full md:opacity-100 absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-300 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-7 text-sm mt-[0.55rem] pt-2 md:py-0 md:bg-transparent md:border-none md:mt-0`}
+        }  opacity-0 h-0 md:h-full md:opacity-100 absolute left-0 z-50 flex w-full flex-col items-center transition-all duration-300 ease-in-out md:static md:flex md:justify-start md:flex-row md:items-center gap-7 text-sm pt-2 md:py-0 md:bg-transparent md:border-none md:mt-0`}
       >
         <li
           onClick={() => {
