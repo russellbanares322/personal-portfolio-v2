@@ -11,7 +11,9 @@ const TechStacks = () => {
       ref={techStacksRef}
       className={`${isDarkMode ? "text-white" : "text-blue"} page-padding`}
     >
-      <p className="section-title">Tech stacks</p>
+      <p data-aos="fade-right" className="section-title">
+        Tech stacks
+      </p>
       <div className="flex justify-evenly items-center mt-16 flex-wrap gap-4 md:gap-3 relative">
         {techStacksData?.map((techStack) => (
           <div

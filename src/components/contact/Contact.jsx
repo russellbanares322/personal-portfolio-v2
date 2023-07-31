@@ -67,10 +67,13 @@ const Contact = () => {
         isDarkMode ? "text-white" : "text-blue"
       } page-padding mb-20`}
     >
-      <p className="section-title">GET IN TOUCH</p>
+      <p data-aos="fade-right" className="section-title">
+        GET IN TOUCH
+      </p>
       <div className="flex justify-around items-center gap-12 mt-16 relative flex-wrap">
-        <div className=" w-[33rem] z-20">
+        <div className="w-[33rem] z-20">
           <form
+            data-aos="fade-up"
             onSubmit={handleSubmit}
             className={`bg-white mt-[2rem] md:mt-0 relative w-[25rem] h-full text-blue flex flex-col p-5 rounded-md border-l-4 border-l-yellow border-b-4 border-b-yellow ${
               !isDarkMode && "border-t border-r"
@@ -141,6 +144,7 @@ const Contact = () => {
           </form>
         </div>
         <img
+          data-aos="zoom-in"
           className="-top-14 bottom scale-x-[-1] md:scale-[1] absolute z-10 md:static object-cover sm:h-[20rem] md:h-[15rem] lg-[20rem] xl:h-[20rem]"
           src={contactIcon}
         />

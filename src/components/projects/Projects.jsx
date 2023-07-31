@@ -15,6 +15,7 @@ const Projects = () => {
   const onHideProjectDetails = () => {
     setHoveredProjectId(null);
   };
+
   return (
     <div ref={projectsRef} className="page-padding">
       <p
@@ -48,7 +49,7 @@ const Projects = () => {
           {projectsData.map((project) => {
             const showProjectDetails = hoveredProjectId === project.id;
             return (
-              <SplideSlide key={project.id}>
+              <SplideSlide data-aos="fade-up" key={project.id}>
                 <div
                   onMouseLeave={onHideProjectDetails}
                   onMouseEnter={() => onShowProjectDetails(project.id)}
