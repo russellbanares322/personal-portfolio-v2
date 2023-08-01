@@ -75,7 +75,7 @@ const Contact = () => {
           <form
             data-aos="fade-up"
             onSubmit={handleSubmit}
-            className={`bg-white mt-[2rem] md:mt-0 relative w-[25rem] h-full text-blue flex flex-col p-5 rounded-md border-l-4 border-l-yellow border-b-4 border-b-yellow ${
+            className={`bg-white mx-auto w-[20rem] md:mx-0  mt-[2rem] md:mt-0 relative md:w-[25rem] h-full text-blue flex flex-col p-5 rounded-md border-l-4 border-l-yellow border-b-4 border-b-yellow ${
               !isDarkMode && "border-t border-r"
             }`}
           >
