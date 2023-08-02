@@ -9,16 +9,25 @@ const Modal = ({ children, open, onClose }) => {
       document.body.style.overflow = "unset";
     }
   }, [open]);
+
+  const handleCloseModal = (e) => {
+    const { id } = e.target;
+    if (id === "modal-wrapper") {
+      onClose();
+    }
+  };
   return (
     <div
-      className={`bg-black/10 backdrop-filter backdrop-blur-md ${
+      onClick={handleCloseModal}
+      className={`bg-black/10 backdrop-filter backdrop-blur-md cursor-pointer ${
         open ? "visible" : "hidden"
       } fixed inset-0 px-5 overflow-y-auto h-full w-full pt-7  z-50`}
+      id="modal-wrapper"
     >
       <div
         className={`bg-light-blue ${
           open ? "scale-1" : "scale-0"
-        } w-auto  md:w-[45rem]  lg:w-[45rem] xl:w-[45rem] 2xl:w-[45rem] h-auto rounded-lg pb-7 my-5 mx-auto`}
+        } cursor-default w-auto  md:w-[45rem]  lg:w-[45rem] xl:w-[45rem] 2xl:w-[45rem] h-auto rounded-lg pb-7 my-5 mx-auto`}
       >
         {children}
       </div>

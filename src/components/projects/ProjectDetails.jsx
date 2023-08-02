@@ -58,14 +58,14 @@ const ProjectDetails = ({ selectedProject }) => {
           <a
             href={selectedProject?.source_code}
             target="_blank"
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 hover:underline"
           >
             <RxGithubLogo size={17} /> source code
           </a>
           <a
             href={selectedProject?.live_link}
             target="_blank"
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 hover:underline"
           >
             <HiOutlineExternalLink size={17} /> live project
           </a>
