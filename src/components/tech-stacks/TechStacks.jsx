@@ -9,7 +9,9 @@ const TechStacks = () => {
   return (
     <div
       ref={techStacksRef}
-      className={`${isDarkMode ? "text-white" : "text-blue"} page-padding`}
+      className={`${
+        isDarkMode ? "text-white" : "text-blue"
+      } page-padding page-padding-top`}
     >
       <p data-aos="fade-right" className="section-title">
         Tech stacks

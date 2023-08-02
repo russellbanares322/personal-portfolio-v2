@@ -32,7 +32,7 @@ const Projects = () => {
 
   return (
     <>
-      <div ref={projectsRef} className="page-padding">
+      <div ref={projectsRef} className="page-padding page-padding-top">
         <p
           data-aos="fade-right"
           className={`${

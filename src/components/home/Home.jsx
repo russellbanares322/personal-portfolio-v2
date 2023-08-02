@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import About from "../about/About";
-import Banner from "../banner/Banner";
-import Contact from "../contact/Contact";
 import Navbar from "../navbar/Navbar";
+import Hero from "../hero/Hero";
 import Projects from "../projects/Projects";
+import About from "../about/About";
 import TechStacks from "../tech-stacks/TechStacks";
+import Contact from "../contact/Contact";
 import ScrollUpButton from "./ScrollUpButton";
 import Aos from "aos";
 
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Banner />
+      <Hero />
       <Projects />
       <About />
       <TechStacks />

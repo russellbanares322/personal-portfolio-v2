@@ -8,7 +8,9 @@ const About = () => {
   return (
     <div
       ref={aboutRef}
-      className={`${isDarkMode ? "text-white" : "text-black"} page-padding`}
+      className={`${
+        isDarkMode ? "text-white" : "text-black"
+      } page-padding page-padding-top`}
     >
       <p data-aos="fade-right" className="section-title">
         About

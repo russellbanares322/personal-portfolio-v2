@@ -48,7 +48,7 @@ const Navbar = () => {
         blurNavbar &&
         !isDarkMode &&
         "bg-white/10 backdrop-filter backdrop-blur-lg"
-      } z-50 md:flex md:justify-start md:items-center px-9 md:px-28 py-1 fixed w-full`}
+      } z-50 md:flex md:justify-start md:items-center page-padding py-2 fixed w-full`}
     >
       <div className="flex items-center justify-between mr-0 md:flex md:mr-6">
         <img className="h-16 w-16 object-contain" src={logo} />

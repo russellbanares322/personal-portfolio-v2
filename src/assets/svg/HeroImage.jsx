@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { PageContext } from "../../context/PageContext";
 
-const BannerImage = () => {
+const HeroImage = () => {
   const { isDarkMode } = useContext(PageContext);
 
   return (
@@ -551,4 +551,4 @@ const BannerImage = () => {
   );
 };
 
-export default BannerImage;
+export default HeroImage;

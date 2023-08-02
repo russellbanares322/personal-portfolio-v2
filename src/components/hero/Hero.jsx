@@ -2,16 +2,16 @@ import React, { useContext } from "react";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { PageContext } from "../../context/PageContext";
-import BannerImage from "../../assets/svg/BannerImage";
+import HeroImage from "../../assets/svg/HeroImage";
 
-const Banner = () => {
+const Hero = () => {
   const { isDarkMode } = useContext(PageContext);
 
   return (
     <div
       className={`${
         isDarkMode ? "text-white" : "text-blue"
-      } page-padding flex-1 lg:flex justify-between items-center`}
+      } page-padding page-padding-top flex-1 lg:flex justify-between items-center`}
     >
       <div>
         <p
@@ -45,10 +45,10 @@ const Banner = () => {
         </div>
       </div>
       <div data-aos="zoom-in">
-        <BannerImage />
+        <HeroImage />
       </div>
     </div>
   );
 };
 
-export default Banner;
+export default Hero;
