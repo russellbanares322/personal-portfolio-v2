@@ -7,7 +7,7 @@ const HeroImage = () => {
   return (
     <div>
       <svg
-        className="w-[17rem] mt-16 mx-auto md:mt-0 md:mx-0 h-[15rem] md:w-auto lg:w-auto xl:w-auto md:h-[15rem] lg:h-[25rem] xl:h-[25rem]"
+        className="w-[17rem] mt-16 lg:mt-16 h-[15rem] mx-auto md:mt-24  md:w-auto xl:w-auto md:h-[23rem] lg:mx-0 lg:w-auto lg:h-[25rem] xl:h-[25rem]"
         viewBox="0 0 787 573"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

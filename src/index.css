@@ -18,7 +18,7 @@
   @apply my-1 font-semibold relative after:absolute after:content-['*'] after:text-red after:pl-1;
 }
 .section-title {
-  @apply text-[2rem] font-semibold uppercase relative after:absolute after:left-0 after:bottom-0 after:w-12 after:rounded-lg after:h-1 after:bg-yellow;
+  @apply text-[1.5rem] md:text-[2rem] font-semibold uppercase relative after:absolute after:left-0 after:bottom-0 after:w-12 after:rounded-lg after:h-1 after:bg-yellow;
 }
 .page-padding-top {
   @apply pt-36 md:pt-48;
