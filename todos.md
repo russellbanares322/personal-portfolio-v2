@@ -1,3 +1,5 @@
-TODOS:
-//Fix elements mobile responsiveness
-//Implement framer motion for animations
+FIX:
+
+//Implement framer motion for animation instead of animate on scroll
+// Change how projects are being displayed, instead of slider replace it with just
+flex
