@@ -3,6 +3,7 @@ import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { PageContext } from "../../context/PageContext";
 import HeroImage from "../../assets/svg/HeroImage";
+import resume from "../../assets/files/Russell_Bañares.pdf";
 
 const Hero = () => {
   const { isDarkMode } = useContext(PageContext);
@@ -31,16 +32,25 @@ const Hero = () => {
         </p>
         <div className="flex gap-2 mt-5">
           <button data-aos="fade-down" className="button-style">
-            <FiGithub className="text-xl md:text-2xl" />
+            <a target="_blank" href="https://github.com/russellbanares322">
+              <FiGithub className="text-xl md:text-2xl" />
+            </a>
           </button>
           <button data-aos="fade-down" className="button-style">
-            <FaLinkedinIn className="text-xl md:text-2xl" />
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/russell-ba%C3%B1ares-5aa044242/"
+            >
+              <FaLinkedinIn className="text-xl md:text-2xl" />
+            </a>
           </button>
           <button
             data-aos="fade-down"
             className="button-style font-bold text-sm md:text-[1rem]"
           >
-            Download CV
+            <a download="Russell_Bañares.pdf" href={resume}>
+              Download CV
+            </a>
           </button>
         </div>
       </div>

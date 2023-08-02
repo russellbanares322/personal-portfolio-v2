@@ -32,14 +32,16 @@ const About = () => {
             knowledge that can further enhance my abilities.
           </p>
           <div
+            data-aos="zoom-in"
             className={`mt-10 md:mt-0 ${
-              isDarkMode ? "bg-light-yellow" : "bg-blue"
-            }  w-80 h-80 absolute -top-10 -right-24 rounded-full opacity-10`}
+              isDarkMode ? "bg-light-yellow/10" : "bg-blue/10"
+            }  w-80 h-80 absolute -top-10 -right-24 rounded-full`}
           />
           <div
+            data-aos="zoom-in"
             className={`mt-10 md:mt-0  ${
-              isDarkMode ? "bg-light-yellow" : "bg-blue"
-            } h-20 w-20 absolute -top-8 -left-5 rounded-full opacity-10`}
+              isDarkMode ? "bg-light-yellow/10" : "bg-blue/10"
+            } h-20 w-20 absolute -top-8 -left-5 rounded-full`}
           />
         </div>
       </div>

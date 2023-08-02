@@ -11,13 +11,15 @@ const ProjectDetails = ({ selectedProject }) => {
         src={selectedProject?.thumbnail_image}
       />
       <div className="px-5 pt-5">
-        <h1 className="text-white text-[2rem] font-bold">
+        <h1 className="text-white text-[1.5rem] md:text-[2rem] font-bold">
           {selectedProject?.title}
         </h1>
-        <p className="text-md text-yellow">
+        <p className="text-sm md:text-md text-yellow">
           {selectedProject?.technologiesUsed.join(" - ")}
         </p>
-        <p className="my-5 text-white">{selectedProject?.details}</p>
+        <p className="my-5 text-white text-sm md:text-md">
+          {selectedProject?.details}
+        </p>
         <div>
           <h3 className="text-white text-[1.5rem] font-bold mb-2">
             Project images<span className="text-yellow">.</span>
@@ -58,14 +60,14 @@ const ProjectDetails = ({ selectedProject }) => {
           <a
             href={selectedProject?.source_code}
             target="_blank"
-            className="flex items-center gap-1 hover:underline"
+            className="text-sm md:text-md flex items-center gap-1 hover:underline"
           >
             <RxGithubLogo size={17} /> source code
           </a>
           <a
             href={selectedProject?.live_link}
             target="_blank"
-            className="flex items-center gap-1 hover:underline"
+            className="text-sm md:text-md flex items-center gap-1 hover:underline"
           >
             <HiOutlineExternalLink size={17} /> live project
           </a>

@@ -1,7 +1,10 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { HiOutlineX } from "react-icons/hi";
+import { PageContext } from "../../context/PageContext";
 
 const Modal = ({ children, open, onClose }) => {
+  const { isDarkMode } = useContext(PageContext);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -33,7 +36,9 @@ const Modal = ({ children, open, onClose }) => {
       </div>
       <HiOutlineX
         onClick={onClose}
-        className="text-white absolute top-3 right-5 cursor-pointer"
+        className={`${
+          isDarkMode ? "text-white" : "text-blue"
+        } absolute top-3 right-5 cursor-pointer`}
         size={25}
       />
     </div>

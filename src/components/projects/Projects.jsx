@@ -85,8 +85,10 @@ const Projects = () => {
                     <div
                       className={` ${
                         showProjectDetails
-                          ? "bottom-0 opacity-100 bg-whitesmoke text-blue"
+                          ? "bottom-0 opacity-100 text-blue"
                           : "-bottom-36 bg-opacity-30 bg-light-blue text-yellow"
+                      } ${
+                        isDarkMode ? "bg-white" : "bg-gray-200"
                       } h-44 absolute transition-all duration-500 ease-in-out border-l-4 border-l-yellow`}
                     >
                       <div className="flex justify-between items-center px-2 pt-2">
