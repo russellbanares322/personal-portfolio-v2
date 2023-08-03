@@ -32,8 +32,13 @@ const Projects = () => {
           Projects
         </p>
         <div className="mt-16 flex justify-center items-center flex-wrap gap-8">
-          {projectsData?.map((project) => (
-            <div className="w-[30rem] h-[30rem] mb-5 md:mb-10" key={project.id}>
+          {projectsData?.map((project, index) => (
+            <div
+              className={`w-[30rem] h-[30rem] ${
+                index !== projectsData.length - 1 && "mb-5"
+              }  md:mb-10`}
+              key={project.id}
+            >
               <div className="relative overflow-hidden rounded-lg">
                 <img
                   onClick={() => handleOpenModal(project)}
