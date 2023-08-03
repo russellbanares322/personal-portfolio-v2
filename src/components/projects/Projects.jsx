@@ -45,16 +45,36 @@ const Projects = () => {
                 data-aos="fade-right"
                 className="flex items-center gap-[1rem] w-full mt-5"
               >
-                <p className="font-bold text-gray-300 text-[1.3rem] md:text-[1.5rem] w-auto md:min-w-max">
+                <p
+                  className={`font-bold ${
+                    isDarkMode ? "text-gray-300" : "text-blue"
+                  } text-[1.3rem] md:text-[1.5rem] w-auto md:min-w-max`}
+                >
                   {project.title}
                 </p>
-                <div className="w-full h-[1px] opacity-[0.3] bg-white" />
+                <div
+                  className={`w-full h-[1px] opacity-[0.3] ${
+                    isDarkMode ? "bg-white" : "bg-blue"
+                  }`}
+                />
                 <div className="flex items-center gap-2">
                   <a target="_blank" href={project.source_code}>
-                    <RxGithubLogo className="text-gray-300 cursor-pointer hover:text-white text-[1.7rem] md:text-[2rem]" />
+                    <RxGithubLogo
+                      className={`${
+                        isDarkMode
+                          ? "text-gray-300 hover:text-white"
+                          : "text-blue hover:text-light-blue"
+                      } cursor-pointer text-[1.63rem] md:text-[2rem]`}
+                    />
                   </a>
                   <a target="_blank" href={project.live_link}>
-                    <HiOutlineExternalLink className="text-gray-300 cursor-pointer hover:text-white text-[1.8rem] md:text-[2rem]" />
+                    <HiOutlineExternalLink
+                      className={`${
+                        isDarkMode
+                          ? "text-gray-300 hover:text-white"
+                          : "text-blue hover:text-light-blue"
+                      } cursor-pointer text-[1.8rem] md:text-[2rem]`}
+                    />
                   </a>
                 </div>
               </div>
@@ -64,7 +84,11 @@ const Projects = () => {
                 </p>
               </div>
               <div data-aos="fade-right" className="my-3 w-fit overflow-hidden">
-                <p className="text-white text-md md:text-lg font-light">
+                <p
+                  className={`${
+                    isDarkMode ? "text-gray-300" : "text-blue"
+                  } text-md md:text-lg font-light`}
+                >
                   {project.details}
                   <span
                     onClick={() => handleOpenModal(project)}
