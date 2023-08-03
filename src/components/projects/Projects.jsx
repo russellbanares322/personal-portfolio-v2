@@ -33,11 +33,11 @@ const Projects = () => {
         </p>
         <div className="mt-16 flex justify-center items-center flex-wrap gap-8">
           {projectsData?.map((project) => (
-            <div className="w-[30rem] h-[30rem] mb-10" key={project.id}>
+            <div className="w-[30rem] h-[30rem] mb-5 md:mb-10" key={project.id}>
               <div className="relative overflow-hidden rounded-lg">
                 <img
-                  data-aos="zoom-in"
-                  className="duration-300 object-cover h-[15rem] w-[30rem] md:h-[17rem] rounded-lg cursor-pointer hover:scale-[1.1]"
+                  onClick={() => handleOpenModal(project)}
+                  className="duration-300 object-cover rounded-lg cursor-pointer hover:scale-[1.1]"
                   src={project.thumbnail_image}
                 />
               </div>
@@ -45,7 +45,7 @@ const Projects = () => {
                 data-aos="fade-right"
                 className="flex items-center gap-[1rem] w-full mt-5"
               >
-                <p className="font-bold text-gray-300 text-[1.5rem] min-w-max">
+                <p className="font-bold text-gray-300 text-[1.3rem] md:text-[1.5rem] w-auto md:min-w-max">
                   {project.title}
                 </p>
                 <div className="w-full h-[1px] opacity-[0.3] bg-white" />
