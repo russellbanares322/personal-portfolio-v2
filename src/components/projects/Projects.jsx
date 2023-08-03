@@ -51,30 +51,24 @@ const Projects = () => {
                 <div className="w-full h-[1px] opacity-[0.3] bg-white" />
                 <div className="flex items-center gap-2">
                   <a target="_blank" href={project.source_code}>
-                    <RxGithubLogo
-                      className="text-gray-300 cursor-pointer hover:text-white"
-                      size={28}
-                    />
+                    <RxGithubLogo className="text-gray-300 cursor-pointer hover:text-white text-[1.7rem] md:text-[2rem]" />
                   </a>
                   <a target="_blank" href={project.live_link}>
-                    <HiOutlineExternalLink
-                      className="text-gray-300 cursor-pointer hover:text-white"
-                      size={30}
-                    />
+                    <HiOutlineExternalLink className="text-gray-300 cursor-pointer hover:text-white text-[1.8rem] md:text-[2rem]" />
                   </a>
                 </div>
               </div>
               <div data-aos="fade-right" className="my-1">
-                <p className="text-yellow font-light">
+                <p className="text-yellow font-light text-sm md:text-md">
                   {project.technologiesUsed.join(" - ")}
                 </p>
               </div>
-              <div data-aos="fade-right" className="my-1 w-fit overflow-hidden">
-                <p className="text-white text-lg font-light">
+              <div data-aos="fade-right" className="my-3 w-fit overflow-hidden">
+                <p className="text-white text-md md:text-lg font-light">
                   {project.details}
                   <span
                     onClick={() => handleOpenModal(project)}
-                    className="flex gap-1 items-center text-[1rem] text-yellow cursor-pointer hover:underline"
+                    className="flex gap-1 items-center text-sm py-1 md:text-[1rem] text-yellow cursor-pointer hover:underline"
                   >
                     Learn more <HiChevronRight />
                   </span>
