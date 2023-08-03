@@ -80,7 +80,7 @@ export const projectsData = [
   },
   {
     id: 4,
-    title: "Property Management System",
+    title: "Property Finder",
     details:
       "Our capstone project which display different kinds of property, and allowing the user to set an appointment.",
     technologiesUsed: ["ReactJS", "Firebase", "EmailJS", "Tawk.to Live Chat"],
@@ -118,7 +118,7 @@ export const projectsData = [
     title: "Trackeroo",
     details:
       "A project that uses an api to fetch data about crypto currency prices, with the help of axios library.",
-    technologiesUsed: ["ReactJS", "Axios"],
+    technologiesUsed: ["ReactJS", "Axios", "CoingeckoAPI"],
     live_link: "https://trackeroo.vercel.app/",
     source_code: "https://github.com/russellbanares322/cryptotrackerapp",
     thumbnail_image:
@@ -144,7 +144,7 @@ export const projectsData = [
     title: "Games List App",
     details:
       "Displaying different types of games with pagination, and axios library for api fetching.",
-    technologiesUsed: ["ReactJS", "Axios"],
+    technologiesUsed: ["ReactJS", "Axios", "RapidAPI"],
     live_link: "https://games-list-viewer.vercel.app/",
     source_code: "https://github.com/russellbanares322/games-list-app",
     thumbnail_image:

@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { projectsData } from "../../data/ProjectsData";
 import { HiOutlineExternalLink, HiChevronRight } from "react-icons/hi";
 import { RxGithubLogo } from "react-icons/rx";
@@ -8,18 +7,9 @@ import Modal from "../../global/modal/Modal";
 import ProjectDetails from "./ProjectDetails";
 
 const Projects = () => {
-  const [hoveredProjectId, setHoveredProjectId] = useState(null);
   const { isDarkMode, projectsRef } = useContext(PageContext);
   const [showProjectDetailsModal, setShowProjectDetailsModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-
-  const onShowProjectDetails = (selectedProjectId) => {
-    setHoveredProjectId(selectedProjectId);
-  };
-
-  const onHideProjectDetails = () => {
-    setHoveredProjectId(null);
-  };
 
   const handleOpenModal = (selectedProjectData) => {
     setSelectedProject(selectedProjectData);
@@ -41,93 +31,57 @@ const Projects = () => {
         >
           Projects
         </p>
-        <div className="mt-16">
-          <Splide
-            options={{
-              perPage: 3,
-              gap: 20,
-              pagination: false,
-              breakpoints: {
-                640: {
-                  perPage: 1,
-                  gap: 10,
-                },
-                767: {
-                  perPage: 2,
-                  gap: 15,
-                },
-                1024: {
-                  perPage: 2,
-                  gap: 15,
-                },
-              },
-            }}
-          >
-            {projectsData.map((project) => {
-              const showProjectDetails = hoveredProjectId === project.id;
-              return (
-                <SplideSlide data-aos="fade-up" key={project.id}>
-                  <div
-                    onMouseLeave={onHideProjectDetails}
-                    onMouseEnter={() => onShowProjectDetails(project.id)}
-                    className="bg-whitesmoke relative overflow-hidden"
+        <div className="mt-16 flex justify-center items-center flex-wrap gap-8">
+          {projectsData?.map((project) => (
+            <div className="w-[30rem] h-[30rem] mb-10" key={project.id}>
+              <div className="relative overflow-hidden rounded-lg">
+                <img
+                  data-aos="zoom-in"
+                  className="duration-300 object-cover h-[15rem] w-[30rem] md:h-[17rem] rounded-lg cursor-pointer hover:scale-[1.1]"
+                  src={project.thumbnail_image}
+                />
+              </div>
+              <div
+                data-aos="fade-right"
+                className="flex items-center gap-[1rem] w-full mt-5"
+              >
+                <p className="font-bold text-gray-300 text-[1.5rem] min-w-max">
+                  {project.title}
+                </p>
+                <div className="w-full h-[1px] opacity-[0.3] bg-white" />
+                <div className="flex items-center gap-2">
+                  <a target="_blank" href={project.source_code}>
+                    <RxGithubLogo
+                      className="text-gray-300 cursor-pointer hover:text-white"
+                      size={28}
+                    />
+                  </a>
+                  <a target="_blank" href={project.live_link}>
+                    <HiOutlineExternalLink
+                      className="text-gray-300 cursor-pointer hover:text-white"
+                      size={30}
+                    />
+                  </a>
+                </div>
+              </div>
+              <div data-aos="fade-right" className="my-1">
+                <p className="text-yellow font-light">
+                  {project.technologiesUsed.join(" - ")}
+                </p>
+              </div>
+              <div data-aos="fade-right" className="my-1 w-fit overflow-hidden">
+                <p className="text-white text-lg font-light">
+                  {project.details}
+                  <span
+                    onClick={() => handleOpenModal(project)}
+                    className="flex gap-1 items-center text-[1rem] text-yellow cursor-pointer hover:underline"
                   >
-                    <img
-                      className="object-contain"
-                      src={project.thumbnail_image}
-                    />
-                    <div className="absolute h-[4.5rem] w-full bg-black/40 flex justify-center items-center -bottom-10" />
-                    <div
-                      className={`absolute h-full w-full opacity-0 bg-black/70 flex justify-center items-center -bottom-0 duration-500 ease-in-out ${
-                        showProjectDetails && "opacity-100"
-                      }`}
-                    />
-                    <div
-                      className={` ${
-                        showProjectDetails
-                          ? "bottom-0 opacity-100 text-blue"
-                          : "-bottom-36 bg-opacity-30 bg-light-blue text-yellow"
-                      } ${
-                        isDarkMode ? "bg-white" : "bg-gray-200"
-                      } h-44 absolute transition-all duration-500 ease-in-out border-l-4 border-l-yellow`}
-                    >
-                      <div className="flex justify-between items-center px-2 pt-2">
-                        <p className="text-[0.9rem] md:text-md opacity-100 text-yellow">
-                          {project.title}
-                        </p>
-                        <div className="flex gap-2">
-                          <a target="_blank" href={project.source_code}>
-                            <RxGithubLogo
-                              title="Source code"
-                              className="text-xl cursor-pointer  text-blue hover:text-yellow duration-500 ease-in-out"
-                            />
-                          </a>
-                          <a target="_blank" href={project.live_link}>
-                            <HiOutlineExternalLink
-                              title="Live link"
-                              className="text-xl cursor-pointer  text-blue hover:text-yellow duration-500 ease-in-out"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                      <p className="px-2 pt-1 text-[0.75rem] md:text-[0.8rem] text-blue font-semibold">
-                        {project.technologiesUsed.join(" - ")}
-                      </p>
-                      <p className="px-2 pt-3 text-[0.85rem] md:text-sm text-blue">
-                        {project.details}
-                        <span
-                          onClick={() => handleOpenModal(project)}
-                          className="flex pt-[0.1rem] items-center text-yellow cursor-pointer hover:underline"
-                        >
-                          Learn more <HiChevronRight />
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </SplideSlide>
-              );
-            })}
-          </Splide>
+                    Learn more <HiChevronRight />
+                  </span>
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       <Modal open={showProjectDetailsModal} onClose={handleCloseModal}>
