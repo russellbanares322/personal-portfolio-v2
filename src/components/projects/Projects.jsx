@@ -1,16 +1,22 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { projectsData } from "../../data/ProjectsData";
 import { HiOutlineExternalLink, HiChevronRight } from "react-icons/hi";
 import { RxGithubLogo } from "react-icons/rx";
 import { PageContext } from "../../context/PageContext";
 import Modal from "../../global/modal/Modal";
 import ProjectDetails from "./ProjectDetails";
+import { useTransform, useScroll, motion } from "framer-motion";
 
 const Projects = () => {
   const { isDarkMode, projectsRef } = useContext(PageContext);
   const [showProjectDetailsModal, setShowProjectDetailsModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-
+  const projectImagesRef = useRef();
+  const { scrollYProgress } = useScroll({
+    target: projectImagesRef,
+    offset: ["0 1", "0.4 1"],
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
   const handleOpenModal = (selectedProjectData) => {
     setSelectedProject(selectedProjectData);
     setShowProjectDetailsModal(true);
@@ -30,7 +36,10 @@ const Projects = () => {
         >
           Projects
         </p>
-        <div className="mt-16 flex justify-center items-center flex-wrap gap-8">
+        <motion.div
+          ref={projectImagesRef}
+          className="mt-16 flex justify-center items-center flex-wrap gap-8"
+        >
           {projectsData?.map((project, index) => (
             <div
               className={`w-[30rem] h-[30rem] ${
@@ -38,13 +47,19 @@ const Projects = () => {
               }  md:mb-10`}
               key={project.id}
             >
-              <div className="relative overflow-hidden rounded-lg">
+              <motion.div
+                style={{
+                  opacity: scrollYProgress,
+                  scale: scaleProgress,
+                }}
+                className="relative overflow-hidden rounded-lg"
+              >
                 <img
                   onClick={() => handleOpenModal(project)}
                   className="duration-300 object-cover rounded-lg cursor-pointer hover:scale-[1.1]"
                   src={project.thumbnail_image}
                 />
-              </div>
+              </motion.div>
               <div className="flex items-center gap-[1rem] w-full mt-5">
                 <p
                   className={`font-bold ${
@@ -101,7 +116,7 @@ const Projects = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
       <Modal open={showProjectDetailsModal} onClose={handleCloseModal}>
         <ProjectDetails selectedProject={selectedProject} />
