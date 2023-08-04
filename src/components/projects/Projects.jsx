@@ -24,7 +24,6 @@ const Projects = () => {
     <>
       <div ref={projectsRef} className="page-padding page-padding-top">
         <p
-          data-aos="fade-right"
           className={`${
             isDarkMode ? "text-white" : "text-black"
           } section-title`}
@@ -46,10 +45,7 @@ const Projects = () => {
                   src={project.thumbnail_image}
                 />
               </div>
-              <div
-                data-aos="fade-right"
-                className="flex items-center gap-[1rem] w-full mt-5"
-              >
+              <div className="flex items-center gap-[1rem] w-full mt-5">
                 <p
                   className={`font-bold ${
                     isDarkMode ? "text-gray-300" : "text-blue"
@@ -83,12 +79,12 @@ const Projects = () => {
                   </a>
                 </div>
               </div>
-              <div data-aos="fade-right" className="my-1">
+              <div className="my-1">
                 <p className="text-yellow font-light text-sm md:text-md">
                   {project.technologiesUsed.join(" - ")}
                 </p>
               </div>
-              <div data-aos="fade-right" className="my-3 w-fit overflow-hidden">
+              <div className="my-3 w-fit overflow-hidden">
                 <p
                   className={`${
                     isDarkMode ? "text-gray-300" : "text-blue"

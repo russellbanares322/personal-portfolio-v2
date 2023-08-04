@@ -13,9 +13,7 @@ const TechStacks = () => {
         isDarkMode ? "text-white" : "text-blue"
       } page-padding page-padding-top`}
     >
-      <p data-aos="fade-right" className="section-title">
-        Tech stacks
-      </p>
+      <p className="section-title">Tech stacks</p>
       <div className="flex justify-evenly items-center mt-16 flex-wrap gap-4 md:gap-3 relative">
         {techStacksData?.map((techStack) => (
           <div
