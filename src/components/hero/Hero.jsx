@@ -4,6 +4,15 @@ import { RiLinkedinLine } from "react-icons/ri";
 import { PageContext } from "../../context/PageContext";
 import HeroImage from "../../assets/svg/HeroImage";
 import resume from "../../assets/files/Russell_Bañares.pdf";
+import { motion } from "framer-motion";
+import {
+  bannerTextAnimation,
+  bannerImageAnimation,
+  bannerTextContainerAnimation,
+  bannerDescription,
+  bannerButtonsContainerAnimation,
+  bannerButtonsAnimation,
+} from "../../global/animation/animations";
 
 const Hero = () => {
   const { isDarkMode } = useContext(PageContext);
@@ -15,39 +24,74 @@ const Hero = () => {
       } page-padding page-padding-top flex-1 lg:flex justify-between items-center`}
     >
       <div>
-        <p className="text-[2rem] md:text-[2.5rem] font-bold light-text-shadow">
-          Hi, I am
-        </p>
-        <p className="text-[4rem] md:text-[7rem] font-bold medium-text-shadow">
-          Russell
-        </p>
-        <p className="text-[0.9rem] md:text-[1.3rem]">
-          a showcase of my projects and my abilities
-        </p>
-        <div className="flex gap-2 mt-5">
-          <button className="button-style">
+        <motion.div
+          variants={bannerTextContainerAnimation}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.p
+            variants={bannerTextAnimation}
+            className="text-[2rem] md:text-[2.5rem] font-bold light-text-shadow"
+          >
+            Hi, I am
+          </motion.p>
+          <motion.p
+            variants={bannerTextAnimation}
+            className="text-[4rem] md:text-[7rem] font-bold medium-text-shadow"
+          >
+            Russell
+          </motion.p>
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            variants={bannerDescription}
+            className="text-[0.9rem] md:text-[1.3rem]"
+          >
+            a showcase of my projects and my abilities
+          </motion.p>
+        </motion.div>
+        <motion.div
+          variants={bannerButtonsContainerAnimation}
+          initial="hidden"
+          animate="visible"
+          className="flex gap-2 mt-5 overflow-hidden"
+        >
+          <motion.button
+            variants={bannerButtonsAnimation}
+            className="button-style"
+          >
             <a target="_blank" href="https://github.com/russellbanares322">
               <FiGithub className="text-xl md:text-2xl" />
             </a>
-          </button>
-          <button className="button-style">
+          </motion.button>
+          <motion.button
+            variants={bannerButtonsAnimation}
+            className="button-style"
+          >
             <a
               target="_blank"
               href="https://www.linkedin.com/in/russell-ba%C3%B1ares-5aa044242/"
             >
               <RiLinkedinLine className="text-xl md:text-[1.6rem]" />
             </a>
-          </button>
-          <button className="button-style font-bold text-sm md:text-[1rem]">
+          </motion.button>
+          <motion.button
+            variants={bannerButtonsAnimation}
+            className="button-style font-bold text-sm md:text-[1rem]"
+          >
             <a download="Russell_Bañares.pdf" href={resume}>
               Download CV
             </a>
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
-      <div>
+      <motion.div
+        variants={bannerImageAnimation}
+        initial="hidden"
+        animate="visible"
+      >
         <HeroImage />
-      </div>
+      </motion.div>
     </div>
   );
 };
