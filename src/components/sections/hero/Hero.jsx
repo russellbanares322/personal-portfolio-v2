@@ -5,6 +5,14 @@ import HeroImage from "../../../assets/svg/HeroImage";
 import resume from "../../../assets/files/Russell_Bañares.pdf";
 import { motion } from "framer-motion";
 import { PageContext } from "../../../context/PageContext";
+import {
+  bannerTextContainerAnimation,
+  bannerTextAnimation,
+  bannerDescriptionAnimation,
+  bannerButtonsContainerAnimation,
+  bannerButtonsAnimation,
+  bannerImageAnimation,
+} from "../../../global/animation/animations";
 
 const Hero = () => {
   const { isDarkMode } = useContext(PageContext);
@@ -36,7 +44,7 @@ const Hero = () => {
           <motion.p
             initial="hidden"
             animate="visible"
-            variants={bannerDescription}
+            variants={bannerDescriptionAnimation}
             className="text-[0.9rem] md:text-[1.3rem]"
           >
             a showcase of my projects and my abilities

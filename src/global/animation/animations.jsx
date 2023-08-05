@@ -5,7 +5,7 @@ export const bannerTextContainerAnimation = {
     transition: { staggeredChildren: 0.12, delayChildren: 0.04 * i },
   }),
 };
-export const bannerDescription = {
+export const bannerDescriptionAnimation = {
   hidden: { x: -100 },
   visible: { x: 0, transition: { duration: 1 } },
 };

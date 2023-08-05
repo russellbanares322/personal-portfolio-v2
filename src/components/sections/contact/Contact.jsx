@@ -8,7 +8,7 @@ import { PageContext } from "../../../context/PageContext";
 const Contact = () => {
   const { isDarkMode, contactRef } = useContext(PageContext);
   const [isInputDirty, setIsInputEmpty] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     userName: "",
     email: "",
@@ -137,7 +137,7 @@ const Contact = () => {
             </p>
             <button
               disabled={isLoading}
-              className="button-style mt-5 font-semibold disabled:bg-light-yellow disabled:text-gray-500"
+              className="button-style mt-5 font-semibold disabled:bg-light-yellow disabled:text-gray-500 disabled:cursor-progress"
             >
               {isLoading ? "Submitting..." : "Submit"}
             </button>
