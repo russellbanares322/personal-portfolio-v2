@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/files/logo.png";
 import { HiMenu, HiOutlineX } from "react-icons/hi";
-import Switch from "../theme-changer/Switch";
 import { PageContext } from "../../context/PageContext";
+import Switch from "../theme-changer/Switch";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);

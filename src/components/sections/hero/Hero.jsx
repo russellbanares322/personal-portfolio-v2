@@ -1,18 +1,10 @@
 import React, { useContext } from "react";
 import { FiGithub } from "react-icons/fi";
 import { RiLinkedinLine } from "react-icons/ri";
-import { PageContext } from "../../context/PageContext";
-import HeroImage from "../../assets/svg/HeroImage";
-import resume from "../../assets/files/Russell_Bañares.pdf";
+import HeroImage from "../../../assets/svg/HeroImage";
+import resume from "../../../assets/files/Russell_Bañares.pdf";
 import { motion } from "framer-motion";
-import {
-  bannerTextAnimation,
-  bannerImageAnimation,
-  bannerTextContainerAnimation,
-  bannerDescription,
-  bannerButtonsContainerAnimation,
-  bannerButtonsAnimation,
-} from "../../global/animation/animations";
+import { PageContext } from "../../../context/PageContext";
 
 const Hero = () => {
   const { isDarkMode } = useContext(PageContext);

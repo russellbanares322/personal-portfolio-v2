@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
+import Footer from "./components/footer/Footer";
 import { PageContext } from "./context/PageContext";
 function App() {
   const { isDarkMode } = useContext(PageContext);

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { techStacksData } from "../../data/TechstackData";
+import { techStacksData } from "../../../data/TechstackData";
 import { HiBookmark } from "react-icons/hi";
-import { PageContext } from "../../context/PageContext";
+import { PageContext } from "../../../context/PageContext";
 
 const TechStacks = () => {
   const { isDarkMode, techStacksRef } = useContext(PageContext);
@@ -13,7 +13,7 @@ const TechStacks = () => {
         isDarkMode ? "text-white" : "text-blue"
       } page-padding page-padding-top`}
     >
-      <p className="section-title">Tech stacks</p>
+      <p className="section-title">Tech stack</p>
       <div className="flex justify-evenly items-center mt-16 flex-wrap gap-4 md:gap-3 relative">
         {techStacksData?.map((techStack) => (
           <div

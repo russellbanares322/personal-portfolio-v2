@@ -1,9 +1,9 @@
 import React, { useContext, useState, useRef } from "react";
-import { projectsData } from "../../data/ProjectsData";
+import { projectsData } from "../../../data/ProjectsData";
 import { HiOutlineExternalLink, HiChevronRight } from "react-icons/hi";
 import { RxGithubLogo } from "react-icons/rx";
-import { PageContext } from "../../context/PageContext";
-import Modal from "../../global/modal/Modal";
+import { PageContext } from "../../../context/PageContext";
+import Modal from "../../../global/modal/Modal";
 import ProjectDetails from "./ProjectDetails";
 import { useTransform, useScroll, motion } from "framer-motion";
 
