@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
-import contactIcon from "../../assets/svg/contact.svg";
-import { PageContext } from "../../context/PageContext";
+import contactIcon from "../../../assets/svg/contact.svg";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
+import { PageContext } from "../../../context/PageContext";
 import toast from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 
@@ -138,7 +138,10 @@ const Contact = () => {
               Message is required
               <HiOutlineExclamationCircle size={15} />
             </p>
-            <button className="button-style mt-5 font-semibold">
+            <button
+              disabled={isLoading}
+              className="button-style mt-5 font-semibold disabled:bg-light-yellow disabled:text-gray-500 disabled:cursor-progress"
+            >
               {isLoading ? "Submitting..." : "Submit"}
             </button>
           </form>
