@@ -4,6 +4,8 @@ import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { PageContext } from "../../../context/PageContext";
 import toast from "react-hot-toast";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import { buttonAnimation } from "../../../global/animations/animations";
 
 const Contact = () => {
   const { isDarkMode, contactRef } = useContext(PageContext);
@@ -138,12 +140,14 @@ const Contact = () => {
               Message is required
               <HiOutlineExclamationCircle size={15} />
             </p>
-            <button
+            <motion.button
+              whileTap={buttonAnimation.whileTap}
+              whileHover={buttonAnimation.whileHover}
               disabled={isLoading}
               className="button-style mt-5 font-semibold disabled:bg-light-yellow disabled:text-gray-500 disabled:cursor-progress"
             >
               {isLoading ? "Submitting..." : "Submit"}
-            </button>
+            </motion.button>
           </form>
         </div>
         <img

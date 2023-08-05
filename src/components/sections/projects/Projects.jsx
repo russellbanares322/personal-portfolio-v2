@@ -39,7 +39,10 @@ const Projects = () => {
               }  md:mb-10`}
               key={project.id}
             >
-              <div className="relative overflow-hidden rounded-lg">
+              <div
+                data-aos="zoom-in"
+                className="relative overflow-hidden rounded-lg"
+              >
                 <img
                   onClick={() => handleOpenModal(project)}
                   className="duration-300 object-cover rounded-lg cursor-pointer hover:scale-[1.1]"
@@ -84,7 +87,7 @@ const Projects = () => {
                 </div>
               </div>
               <div data-aos="fade-right" className="my-1">
-                <p className="text-yellow font-light text-sm md:text-md">
+                <p className="text-yellow font-light text-md">
                   {project.technologiesUsed.join(" - ")}
                 </p>
               </div>

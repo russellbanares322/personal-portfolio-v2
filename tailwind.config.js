@@ -36,11 +36,11 @@ export default {
       colors: {
         blue: "#020817",
         yellow: "#EAB208",
-        black: "#000000",
+        black: "#000000e1",
+        red: "#F70712",
         "light-yellow": "#F3CB59",
         whitesmoke: "#F9EFC9",
         "light-blue": "#263238",
-        red: "#FF0808",
       },
     },
   },
