@@ -32,8 +32,10 @@ const Hero = () => {
         <p data-aos="fade-down" className="text-[0.9rem] md:text-[1.3rem]">
           a showcase of my projects and my abilities
         </p>
-        <div data-aos="fade-right" className="flex gap-2 mt-5">
+        <div className="flex gap-2 mt-5">
           <motion.button
+            data-aos="fade-up"
+            data-aos-delay="100"
             whileTap={buttonAnimation.whileTap}
             whileHover={buttonAnimation.whileHover}
             className="button-style"
@@ -43,6 +45,8 @@ const Hero = () => {
             </a>
           </motion.button>
           <motion.button
+            data-aos="fade-up"
+            data-aos-delay="200"
             whileTap={buttonAnimation.whileTap}
             whileHover={buttonAnimation.whileHover}
             className="button-style"
@@ -55,6 +59,8 @@ const Hero = () => {
             </a>
           </motion.button>
           <motion.button
+            data-aos="fade-up"
+            data-aos-delay="300"
             whileTap={buttonAnimation.whileTap}
             whileHover={buttonAnimation.whileHover}
             className="button-style font-bold text-sm md:text-[1rem]"
