@@ -73,13 +73,13 @@ const Contact = () => {
         GET IN TOUCH
       </p>
       <div className="flex justify-around items-center gap-12 mt-16 relative flex-wrap">
-        <div className="w-[33rem] z-20">
+        <div className="w-[33rem]">
           <form
             data-aos="fade-up"
             onSubmit={handleSubmit}
             className={`bg-white mx-auto w-[20rem] md:mx-0 mt-[2rem] md:mt-0 relative md:w-[25rem] h-full text-blue flex flex-col p-5 rounded-md border-l-4 border-l-yellow border-b-4 border-b-yellow ${
               !isDarkMode && "border-t border-r"
-            }`}
+            } z-20`}
           >
             <label className="input-label-style">Name</label>
             <input
@@ -152,7 +152,7 @@ const Contact = () => {
         </div>
         <img
           data-aos="zoom-in"
-          className="-top-14 bottom scale-x-[-1] md:scale-[1] absolute z-10 md:static object-cover sm:h-[20rem] md:h-[15rem] lg-[20rem] xl:h-[20rem]"
+          className="-top-14 bottom scale-x-[-1] md:scale-[1] absolute md:static object-cover sm:h-[20rem] md:h-[15rem] lg-[20rem] xl:h-[20rem]"
           src={contactIcon}
         />
       </div>

@@ -55,7 +55,7 @@ const XNavbar = () => {
         blurNavbar && isDarkMode && "bg-blue"
       } ${
         blurNavbar && !isDarkMode && "bg-white"
-      } z-10 md:flex md:justify-start md:items-center page-padding py-1 fixed w-full`}
+      } z-50 md:flex md:justify-start md:items-center page-padding py-1 fixed w-full`}
     >
       <div className="flex items-center justify-between mr-0 md:mr-6">
         <img className="h-16 w-16 object-contain" src={logo} />
@@ -118,14 +118,14 @@ const XNavbar = () => {
       </ul>
       {/* Mobile navbar*/}
       {isNavOpen && (
-        <div className="md:hidden bg-black/80 fixed w-full left-0 h-screen z-10 top-0" />
+        <div className="md:hidden bg-black/80 fixed w-full left-0 h-screen top-0" />
       )}
       <div
         className={`md:hidden fixed top-0 right-0 h-full w-[16rem] shadow-md p-6 ${
           isDarkMode ? "bg-blue text-white" : "bg-white text-blue"
         } ${
           isNavOpen ? "translate-x-5" : "translate-x-[100vh]"
-        } z-50 transition-all ease-in-out duration-300`}
+        } transition-all ease-in-out duration-300`}
       >
         <HiOutlineX
           onClick={handleCloseNav}
@@ -144,7 +144,7 @@ const XNavbar = () => {
             className={`${
               activeNavLink === "Home" &&
               "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
-            } flex items-center gap-1 cursor-pointer nav-links-style relative`}
+            }  flex items-center gap-1 cursor-pointer nav-links-style relative`}
           >
             <HiOutlineHome size={16} /> Home
           </li>
