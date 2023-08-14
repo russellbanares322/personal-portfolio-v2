@@ -1,6 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/files/logo.png";
-import { HiMenu, HiOutlineX } from "react-icons/hi";
+import {
+  HiMenu,
+  HiOutlineX,
+  HiOutlineChartSquareBar,
+  HiOutlineHome,
+  HiOutlineIdentification,
+  HiOutlineMail,
+} from "react-icons/hi";
 import Switch from "../theme-changer/Switch";
 import { PageContext } from "../../context/PageContext";
 
@@ -76,9 +83,9 @@ const Navbar = () => {
           className={` ${
             activeNavLink === "Home" &&
             "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
-          } cursor-pointer pt-6 md:pt-0 nav-links-style relative`}
+          } flex items-center gap-1 cursor-pointer pt-6 md:pt-0 nav-links-style relative`}
         >
-          Home
+          <HiOutlineHome size={16} /> Home
         </li>
         <li
           onClick={() => {
@@ -88,9 +95,9 @@ const Navbar = () => {
           className={` ${
             activeNavLink === "About" &&
             "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
-          } cursor-pointer nav-links-style relative`}
+          } flex items-center gap-1 cursor-pointer nav-links-style relative`}
         >
-          About
+          <HiOutlineIdentification size={16} /> About
         </li>
         <li
           onClick={() => {
@@ -100,9 +107,9 @@ const Navbar = () => {
           className={` ${
             activeNavLink === "Projects" &&
             "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
-          } cursor-pointer nav-links-style relative`}
+          } flex items-center gap-1 cursor-pointer nav-links-style relative`}
         >
-          Projects
+          <HiOutlineChartSquareBar size={16} /> Projects
         </li>
         <li
           onClick={() => {
@@ -112,9 +119,9 @@ const Navbar = () => {
           className={` ${
             activeNavLink === "Contact" &&
             "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
-          } cursor-pointer mr-0 md:mr-auto nav-links-style relative`}
+          } flex items-center gap-1 cursor-pointer mr-0 md:mr-auto nav-links-style relative`}
         >
-          Contact
+          <HiOutlineMail size={16} /> Contact
         </li>
         <li>
           <Switch />
