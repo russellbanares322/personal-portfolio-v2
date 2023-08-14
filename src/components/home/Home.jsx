@@ -6,7 +6,7 @@ import TechStacks from "../../components/sections/tech-stacks/TechStacks";
 import Contact from "../../components/sections/contact/Contact";
 import ScrollUpButton from "./ScrollUpButton";
 import Aos from "aos";
-import XNavbar from "../navbar/XNavbar";
+import Navbar from "../navbar/Navbar";
 
 const Home = () => {
   useEffect(() => {
@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <>
-      <XNavbar />
+      <Navbar />
       <Hero />
       <Projects />
       <About />
