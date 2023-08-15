@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
 .nav-links-style {
   @apply hover:text-light-yellow transition ease-in-out duration-300 font-medium;
 }
@@ -23,8 +26,8 @@
 .page-padding-top {
   @apply pt-28 md:pt-44;
 }
-.page-padding {
-  @apply px-9 md:px-20 lg:px-36 xl:px-36 2xl:px-52;
+.page-padding-x {
+  @apply px-14 md:px-24;
 }
 
 .splide__arrow.splide__arrow--prev {

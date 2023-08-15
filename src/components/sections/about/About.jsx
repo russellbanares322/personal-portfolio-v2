@@ -9,7 +9,7 @@ const About = () => {
       ref={aboutRef}
       className={`${
         isDarkMode ? "text-white" : "text-black"
-      } page-padding pt-11 md:pt-38`}
+      } page-padding-x max-w-[1640px] w-full mx-auto pt-11 md:pt-38 page-padding-top`}
     >
       <p data-aos="fade-right" className="section-title">
         About

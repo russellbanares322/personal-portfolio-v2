@@ -52,10 +52,16 @@ const XNavbar = () => {
   return (
     <nav
       className={`${isDarkMode ? "bg-blue text-white" : "bg-white text-blue"} ${
-        blurNavbar && isDarkMode && "bg-blue"
+        blurNavbar &&
+        isDarkMode &&
+        !isNavOpen &&
+        "bg-blue/10 backdrop-filter backdrop-blur-lg"
       } ${
-        blurNavbar && !isDarkMode && "bg-white"
-      } z-50 md:flex md:justify-start md:items-center page-padding py-1 fixed w-full`}
+        blurNavbar &&
+        !isDarkMode &&
+        !isNavOpen &&
+        "bg-white/10 backdrop-filter backdrop-blur-lg"
+      } w-full z-50 md:flex md:justify-start md:items-center px-7 md:px-20 py-3 max-w-[1640px] fixed mx-auto`}
     >
       <div className="flex items-center justify-between mr-0 md:mr-6">
         <img className="h-16 w-16 object-contain" src={logo} />
@@ -112,7 +118,7 @@ const XNavbar = () => {
         >
           <HiOutlineMail size={16} /> Contact
         </li>
-        <li>
+        <li className="ml-auto">
           <Switch />
         </li>
       </ul>

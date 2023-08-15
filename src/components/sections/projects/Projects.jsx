@@ -22,7 +22,10 @@ const Projects = () => {
 
   return (
     <>
-      <div ref={projectsRef} className="page-padding page-padding-top">
+      <div
+        ref={projectsRef}
+        className="max-w-[1640px] w-full page-padding-x page-padding-top mx-auto"
+      >
         <p
           data-aos="fade-right"
           className={`${
@@ -31,10 +34,10 @@ const Projects = () => {
         >
           Projects
         </p>
-        <div className="mt-16 flex justify-center items-center flex-wrap gap-8">
+        <div className="mt-16 grid grid-cols md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10">
           {projectsData?.map((project, index) => (
             <div
-              className={`w-[30rem] h-[30rem] ${
+              className={`max-w-[1640px] h-full ${
                 index !== projectsData.length - 1 && "mb-5"
               }  md:mb-10`}
               key={project.id}

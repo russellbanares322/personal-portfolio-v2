@@ -14,7 +14,7 @@ const Hero = () => {
     <div
       className={`${
         isDarkMode ? "text-white" : "text-blue"
-      } page-padding page-padding-top flex-1 lg:flex justify-between items-center`}
+      } max-w-[1640px] mx-auto w-full page-padding-x page-padding-top flex-1 lg:flex justify-between items-center`}
     >
       <div>
         <p

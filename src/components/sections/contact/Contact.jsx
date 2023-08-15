@@ -67,7 +67,7 @@ const Contact = () => {
       ref={contactRef}
       className={`${
         isDarkMode ? "text-white" : "text-blue"
-      } page-padding page-padding-top mb-20`}
+      } page-padding-x max-w-[1640px] mx-auto w-full page-padding-top mb-20`}
     >
       <p data-aos="fade-right" className="section-title">
         GET IN TOUCH

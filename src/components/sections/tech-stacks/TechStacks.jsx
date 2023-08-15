@@ -11,7 +11,7 @@ const TechStacks = () => {
       ref={techStacksRef}
       className={`${
         isDarkMode ? "text-white" : "text-blue"
-      } page-padding page-padding-top`}
+      } page-padding-x max-w-[1640px] mx-auto  page-padding-top`}
     >
       <p data-aos="fade-right" className="section-title">
         Tech stacks
