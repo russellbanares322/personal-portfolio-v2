@@ -80,7 +80,7 @@ const XNavbar = () => {
             "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
           } flex items-center gap-1 cursor-pointer nav-links-style relative`}
         >
-          <HiOutlineHome size={16} /> Homiee
+          <HiOutlineHome size={16} /> Home
         </li>
         <li
           onClick={() => {
