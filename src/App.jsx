@@ -12,6 +12,7 @@ function App() {
         isDarkMode ? "bg-blue" : "bg-white"
       } ease-in-out duration-300  min-h-[100vh] h-full overflow-x-hidden`}
     >
+      <h1>HELLO MADLANG PIPOL</h1>
       <Home />
       <Footer />
     </div>
