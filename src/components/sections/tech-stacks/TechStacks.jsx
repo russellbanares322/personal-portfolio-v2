@@ -11,12 +11,12 @@ const TechStacks = () => {
       ref={techStacksRef}
       className={`${
         isDarkMode ? "text-white" : "text-blue"
-      } page-padding-x max-w-[1640px] mx-auto  page-padding-top`}
+      } page-padding-x max-w-[1640px] mx-auto page-padding-top`}
     >
       <p data-aos="fade-right" className="section-title">
         Tech stacks
       </p>
-      <div className="flex justify-evenly items-center mt-16 flex-wrap gap-4 md:gap-3 relative">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center mt-16  relative">
         {techStacksData?.map((techStack, index) => (
           <div
             key={techStack.id}
