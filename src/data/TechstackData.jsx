@@ -15,7 +15,7 @@ export const techStacksData = [
   },
   {
     id: 3,
-    name: "Css",
+    name: "CSS",
     icon: <FaCss3Alt className="text-2xl md:text-[2.3rem]" />,
   },
   {
