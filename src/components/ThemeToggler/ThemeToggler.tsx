@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
 import { HiSun, HiOutlineSun, HiMoon, HiOutlineMoon } from "react-icons/hi";
-import { PageContext } from "../../context/PageContext";
+import { usePageContext } from "../../context/PageContext";
 
 const ThemeToggler = () => {
-  const { isDarkMode, handleToggleTheme } = useContext(PageContext);
+  const { isDarkMode, handleToggleTheme } = usePageContext();
 
   const lightModeElement = (
     <>

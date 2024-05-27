@@ -1,14 +1,14 @@
-import React, { useContext, useState } from "react";
+import { useState } from "react";
 import contactIcon from "../../../assets/svg/contact.svg";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
-import { PageContext } from "../../../context/PageContext";
 import toast from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { buttonAnimation } from "../../../global/animations/animations";
+import { usePageContext } from "../../context/PageContext";
+import { buttonAnimation } from "../../lib/animations";
 
 const Contact = () => {
-  const { isDarkMode, contactRef } = useContext(PageContext);
+  const { isDarkMode, contactRef } = usePageContext();
   const [isInputDirty, setIsInputEmpty] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -23,12 +23,14 @@ const Contact = () => {
     VITE_REACT_APP_USER_ID,
   } = import.meta.env;
 
-  const handleFormChange = (e) => {
+  const handleFormChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     const formValues = e.target;
     e.preventDefault();
     if (!formData.userName || !formData.email || !formData.message) {

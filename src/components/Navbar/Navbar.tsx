@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../assets/files/logo.png";
 import {
   HiMenu,
@@ -8,12 +8,16 @@ import {
   HiOutlineIdentification,
   HiOutlineMail,
 } from "react-icons/hi";
-import Switch from "../ThemeToggler/ThemeToggler";
-import { PageContext } from "../../context/PageContext";
+import { TActiveNavLink, usePageContext } from "../../context/PageContext";
+import { twMerge } from "tailwind-merge";
+import ThemeToggler from "../ThemeToggler/ThemeToggler";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [blurNavbar, setBlurNavbar] = useState(false);
+  const defaultClassName =
+    "flex items-center gap-1 cursor-pointer nav-links-style relative";
+
   const {
     isDarkMode,
     aboutRef,
@@ -23,7 +27,7 @@ const Navbar = () => {
     handleScrollToTop,
     activeNavLink,
     handleChangeActiveNavLink,
-  } = useContext(PageContext);
+  } = usePageContext();
 
   const handleBlurNavbar = () => {
     if (window.scrollY >= 80) {
@@ -33,7 +37,7 @@ const Navbar = () => {
     }
   };
 
-  const handleChangeNavLink = (currentNavLink) => {
+  const handleChangeNavLink = (currentNavLink: TActiveNavLink) => {
     handleChangeActiveNavLink(currentNavLink);
   };
 
@@ -49,19 +53,22 @@ const Navbar = () => {
     window.addEventListener("scroll", handleBlurNavbar);
   }, [blurNavbar]);
 
+  const getActiveNavLinkClassName = (selectedNavLink: TActiveNavLink) => {
+    if (activeNavLink === selectedNavLink) {
+      return "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md";
+    }
+  };
+
   return (
     <nav
-      className={`${isDarkMode ? "bg-blue text-white" : "bg-white text-blue"} ${
+      className={twMerge(
+        isDarkMode ? "bg-blue text-white" : "bg-white text-blue",
         blurNavbar &&
-        isDarkMode &&
-        !isNavOpen &&
-        "bg-blue/10 backdrop-filter backdrop-blur-lg"
-      } ${
-        blurNavbar &&
-        !isDarkMode &&
-        !isNavOpen &&
-        "bg-white/10 backdrop-filter backdrop-blur-lg"
-      } w-full z-50 md:flex md:justify-start md:items-center px-7 md:px-20 py-3 max-w-[1640px] fixed mx-auto`}
+          isDarkMode &&
+          !isNavOpen &&
+          "bg-blue/10 backdrop-filter backdrop-blur-lg",
+        "w-full z-50 md:flex md:justify-start md:items-center px-7 md:px-20 py-3 max-w-[1640px] fixed mx-auto"
+      )}
     >
       <div className="flex items-center justify-between mr-0 md:mr-6">
         <img className="h-16 w-16 object-contain" src={logo} />
@@ -75,10 +82,10 @@ const Navbar = () => {
             handleChangeNavLink("Home");
             handleScrollToTop();
           }}
-          className={` ${
-            activeNavLink === "Home" &&
-            "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
-          } flex items-center gap-1 cursor-pointer nav-links-style relative`}
+          className={twMerge(
+            getActiveNavLinkClassName("Home"),
+            defaultClassName
+          )}
         >
           <HiOutlineHome size={16} /> Home
         </li>
@@ -87,10 +94,10 @@ const Navbar = () => {
             handleChangeNavLink("About");
             handleScrollToSection(aboutRef);
           }}
-          className={` ${
-            activeNavLink === "About" &&
-            "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
-          } flex items-center gap-1 cursor-pointer nav-links-style relative`}
+          className={twMerge(
+            getActiveNavLinkClassName("About"),
+            defaultClassName
+          )}
         >
           <HiOutlineIdentification size={16} /> About
         </li>
@@ -99,10 +106,10 @@ const Navbar = () => {
             handleChangeNavLink("Projects");
             handleScrollToSection(projectsRef);
           }}
-          className={` ${
-            activeNavLink === "Projects" &&
-            "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
-          } flex items-center gap-1 cursor-pointer nav-links-style relative`}
+          className={twMerge(
+            getActiveNavLinkClassName("Projects"),
+            defaultClassName
+          )}
         >
           <HiOutlineChartSquareBar size={16} /> Projects
         </li>
@@ -111,15 +118,15 @@ const Navbar = () => {
             handleChangeNavLink("Contact");
             handleScrollToSection(contactRef);
           }}
-          className={` ${
-            activeNavLink === "Contact" &&
-            "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
-          } flex items-center gap-1 cursor-pointer mr-0 md:mr-auto nav-links-style relative`}
+          className={twMerge(
+            getActiveNavLinkClassName("Contact"),
+            defaultClassName
+          )}
         >
           <HiOutlineMail size={16} /> Contact
         </li>
         <li className="ml-auto">
-          <Switch />
+          <ThemeToggler />
         </li>
       </ul>
       {/* Mobile navbar*/}
@@ -127,17 +134,19 @@ const Navbar = () => {
         <div className="md:hidden bg-black/80 fixed w-full left-0 h-screen top-0" />
       )}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-[16rem] shadow-md p-6 ${
-          isDarkMode ? "bg-blue text-white" : "bg-white text-blue"
-        } ${
-          isNavOpen ? "translate-x-5" : "translate-x-[100%]"
-        } transition-all ease-in-out duration-300`}
+        className={twMerge(
+          isDarkMode ? "bg-blue text-white" : "bg-white text-blue",
+          isNavOpen ? "translate-x-5" : "translate-x-[100%]",
+          "transition-all ease-in-out duration-300"
+        )}
       >
         <HiOutlineX
           onClick={handleCloseNav}
-          className={`cursor-pointer ${
-            isDarkMode ? "text-white" : "text-blue"
-          } ${isNavOpen ? "rotate-90" : "rotate-0"} duration-200 ease-in-out`}
+          className={twMerge(
+            isDarkMode ? "text-white" : "text-blue",
+            isNavOpen ? "rotate-90" : "rotate-0",
+            "duration-200 ease-in-out"
+          )}
           size={25}
         />
         <ul className="flex-col flex gap-7 w-full text-sm mt-24">
@@ -147,10 +156,10 @@ const Navbar = () => {
               handleScrollToTop();
               handleCloseNav();
             }}
-            className={`${
-              activeNavLink === "Home" &&
-              "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md"
-            }  flex items-center gap-1 cursor-pointer nav-links-style relative`}
+            className={twMerge(
+              getActiveNavLinkClassName("Home"),
+              defaultClassName
+            )}
           >
             <HiOutlineHome size={16} /> Home
           </li>
@@ -160,10 +169,10 @@ const Navbar = () => {
               handleScrollToSection(aboutRef);
               handleCloseNav();
             }}
-            className={` ${
-              activeNavLink === "About" &&
-              "text-yellow after:absolute after:bottom-[-0.8rem] after:w-full after:h-[0.2rem] after:bg-yellow after:left-0 after:rounded-md"
-            } flex items-center gap-1 cursor-pointer nav-links-style relative`}
+            className={twMerge(
+              getActiveNavLinkClassName("About"),
+              defaultClassName
+            )}
           >
             <HiOutlineIdentification size={16} /> About
           </li>
@@ -173,10 +182,10 @@ const Navbar = () => {
               handleScrollToSection(projectsRef);
               handleCloseNav();
             }}
-            className={` ${
-              activeNavLink === "Projects" &&
-              "text-yellow after:absolute after:bottom-[-0.8rem] after:w-full after:h-[0.2rem] after:bg-yellow after:left-0 after:rounded-md"
-            } flex items-center gap-1 cursor-pointer nav-links-style relative`}
+            className={twMerge(
+              getActiveNavLinkClassName("Projects"),
+              defaultClassName
+            )}
           >
             <HiOutlineChartSquareBar size={16} /> Projects
           </li>
@@ -186,15 +195,15 @@ const Navbar = () => {
               handleScrollToSection(contactRef);
               handleCloseNav();
             }}
-            className={` ${
-              activeNavLink === "Contact" &&
-              "text-yellow after:absolute after:bottom-[-0.8rem] after:w-full after:h-[0.2rem] after:bg-yellow after:left-0 after:rounded-md"
-            } flex items-center gap-1 cursor-pointer nav-links-style relative`}
+            className={twMerge(
+              getActiveNavLinkClassName("Contact"),
+              defaultClassName
+            )}
           >
             <HiOutlineMail size={16} /> Contact
           </li>
           <li className="mt-3">
-            <Switch />
+            <ThemeToggler />
           </li>
         </ul>
       </div>

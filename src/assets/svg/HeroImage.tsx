@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
-import { PageContext } from "../../context/PageContext";
+import { usePageContext } from "../../context/PageContext";
 
 const HeroImage = () => {
-  const { isDarkMode } = useContext(PageContext);
+  const { isDarkMode } = usePageContext();
 
   return (
     <div>

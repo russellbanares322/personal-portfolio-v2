@@ -12,12 +12,14 @@ type PageProviderProps = {
   children: React.ReactNode;
 };
 
+export type TActiveNavLink = "Home" | "About" | "Projects" | "Contact" | "";
+
 type TPageContext = {
   isDarkMode: boolean;
   handleToggleTheme: () => void;
-  handleScrollToSection: (elementRef: MutableRefObject<HTMLDivElement>) => void;
+  handleScrollToSection: (elementRef: RefObject<HTMLDivElement>) => void;
   handleScrollToTop: () => void;
-  handleChangeActiveNavLink: (selectedNavLink: string) => void;
+  handleChangeActiveNavLink: (selectedNavLink: TActiveNavLink) => void;
   activeNavLink: string;
   projectsRef: RefObject<HTMLDivElement>;
   aboutRef: RefObject<HTMLDivElement>;
@@ -29,7 +31,7 @@ export const PageContext = createContext<TPageContext | null>(null);
 
 const PageProvider = ({ children }: PageProviderProps) => {
   const [theme, setTheme] = useState("dark");
-  const [activeNavLink, setActiveNavLink] = useState("");
+  const [activeNavLink, setActiveNavLink] = useState<TActiveNavLink>("");
   const isDarkMode = theme === "dark";
 
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -37,9 +39,7 @@ const PageProvider = ({ children }: PageProviderProps) => {
   const techStacksRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const handleScrollToSection = (
-    elementRef: MutableRefObject<HTMLDivElement>
-  ) => {
+  const handleScrollToSection = (elementRef: RefObject<HTMLDivElement>) => {
     window.scrollTo({
       top: elementRef?.current?.offsetTop,
       behavior: "smooth",
@@ -55,7 +55,7 @@ const PageProvider = ({ children }: PageProviderProps) => {
     setActiveNavLink("");
   };
 
-  const handleChangeActiveNavLink = (selectedNavLink: string) => {
+  const handleChangeActiveNavLink = (selectedNavLink: TActiveNavLink) => {
     setActiveNavLink(selectedNavLink);
   };
 

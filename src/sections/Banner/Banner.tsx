@@ -1,20 +1,21 @@
-import React, { useContext } from "react";
 import { FiGithub } from "react-icons/fi";
 import { RiLinkedinLine } from "react-icons/ri";
-import { PageContext } from "../../../context/PageContext";
-import HeroImage from "../../../assets/svg/HeroImage";
 import resume from "../../../assets/files/Russell_Bañares.pdf";
 import { motion } from "framer-motion";
-import { buttonAnimation } from "../../../global/animations/animations";
+import { usePageContext } from "../../context/PageContext";
+import HeroImage from "../../assets/svg/HeroImage";
+import { buttonAnimation } from "../../lib/animations";
+import { twMerge } from "tailwind-merge";
 
 const Banner = () => {
-  const { isDarkMode } = useContext(PageContext);
+  const { isDarkMode } = usePageContext();
 
   return (
     <div
-      className={`${
-        isDarkMode ? "text-white" : "text-blue"
-      } max-w-[1640px] mx-auto w-full page-padding-x page-padding-top flex-1 lg:flex justify-between items-center`}
+      className={twMerge(
+        isDarkMode ? "text-white" : "text-blue",
+        "max-w-[1640px] mx-auto w-full page-padding-x page-padding-top flex-1 lg:flex justify-between items-center"
+      )}
     >
       <div>
         <p
