@@ -1,19 +1,47 @@
-import { createContext, useEffect, useRef, useState } from "react";
+import {
+  MutableRefObject,
+  RefObject,
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
-export const PageContext = createContext();
+type PageProviderProps = {
+  children: React.ReactNode;
+};
 
-const PageProvider = ({ children }) => {
+type TPageContext = {
+  isDarkMode: boolean;
+  handleToggleTheme: () => void;
+  handleScrollToSection: (elementRef: MutableRefObject<HTMLDivElement>) => void;
+  handleScrollToTop: () => void;
+  handleChangeActiveNavLink: (selectedNavLink: string) => void;
+  activeNavLink: string;
+  projectsRef: RefObject<HTMLDivElement>;
+  aboutRef: RefObject<HTMLDivElement>;
+  techStacksRef: RefObject<HTMLDivElement>;
+  contactRef: RefObject<HTMLDivElement>;
+};
+
+export const PageContext = createContext<TPageContext | null>(null);
+
+const PageProvider = ({ children }: PageProviderProps) => {
   const [theme, setTheme] = useState("dark");
   const [activeNavLink, setActiveNavLink] = useState("");
   const isDarkMode = theme === "dark";
-  const projectsRef = useRef(null);
-  const aboutRef = useRef(null);
-  const techStacksRef = useRef(null);
-  const contactRef = useRef(null);
 
-  const handleScrollToSection = (elementRef) => {
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const techStacksRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollToSection = (
+    elementRef: MutableRefObject<HTMLDivElement>
+  ) => {
     window.scrollTo({
-      top: elementRef.current.offsetTop,
+      top: elementRef?.current?.offsetTop,
       behavior: "smooth",
     });
   };
@@ -27,8 +55,8 @@ const PageProvider = ({ children }) => {
     setActiveNavLink("");
   };
 
-  const handleChangeActiveNavLink = (currentActiveNavLink) => {
-    setActiveNavLink(currentActiveNavLink);
+  const handleChangeActiveNavLink = (selectedNavLink: string) => {
+    setActiveNavLink(selectedNavLink);
   };
 
   const handleToggleTheme = () => {
@@ -68,6 +96,18 @@ const PageProvider = ({ children }) => {
       {children}
     </PageContext.Provider>
   );
+};
+
+export const usePageContext = () => {
+  const context = useContext(PageContext);
+
+  if (!context) {
+    throw new Error(
+      "usePageContext must be used within a ThemeContextProvider"
+    );
+  }
+
+  return context;
 };
 
 export default PageProvider;

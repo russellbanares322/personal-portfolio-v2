@@ -8,10 +8,10 @@ import {
   HiOutlineIdentification,
   HiOutlineMail,
 } from "react-icons/hi";
-import Switch from "../theme-changer/Switch";
+import Switch from "../ThemeToggler/ThemeToggler";
 import { PageContext } from "../../context/PageContext";
 
-const XNavbar = () => {
+const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [blurNavbar, setBlurNavbar] = useState(false);
   const {
@@ -202,4 +202,4 @@ const XNavbar = () => {
   );
 };
 
-export default XNavbar;
+export default Navbar;
