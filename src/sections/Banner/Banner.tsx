@@ -7,7 +7,7 @@ import resume from "../../../assets/files/Russell_Bañares.pdf";
 import { motion } from "framer-motion";
 import { buttonAnimation } from "../../../global/animations/animations";
 
-const Hero = () => {
+const Banner = () => {
   const { isDarkMode } = useContext(PageContext);
 
   return (
@@ -78,4 +78,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Banner;

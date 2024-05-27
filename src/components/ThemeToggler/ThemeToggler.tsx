@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { HiSun, HiOutlineSun, HiMoon, HiOutlineMoon } from "react-icons/hi";
 import { PageContext } from "../../context/PageContext";
 
-const Switch = () => {
+const ThemeToggler = () => {
   const { isDarkMode, handleToggleTheme } = useContext(PageContext);
 
   const lightModeElement = (
@@ -48,4 +48,4 @@ const Switch = () => {
   );
 };
 
-export default Switch;
+export default ThemeToggler;

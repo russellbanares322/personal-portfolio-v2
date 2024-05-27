@@ -1,4 +1,4 @@
-export const projectsData = [
+export const projectData = [
   {
     id: 1,
     title: "Password Generator",
