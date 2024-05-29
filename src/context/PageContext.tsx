@@ -1,5 +1,4 @@
 import {
-  MutableRefObject,
   RefObject,
   createContext,
   useContext,

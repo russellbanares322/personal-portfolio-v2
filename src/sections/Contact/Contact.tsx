@@ -3,9 +3,9 @@ import contactIcon from "../../../assets/svg/contact.svg";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import toast from "react-hot-toast";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
 import { usePageContext } from "../../context/PageContext";
 import { buttonAnimation } from "../../lib/animations";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const { isDarkMode, contactRef } = usePageContext();
@@ -45,7 +45,7 @@ const Contact = () => {
           formValues,
           VITE_REACT_APP_USER_ID
         )
-        .then(
+        .finally(
           () => {
             toast.success("Message sent successfully");
             setFormData({
@@ -55,11 +55,11 @@ const Contact = () => {
             });
             setIsInputEmpty(false);
             setIsLoading(false);
-          },
-          () => {
-            toast.error("Failed to send message, please try again");
-            setIsLoading(false);
           }
+          // () => {
+          //   toast.error("Failed to send message, please try again");
+          //   setIsLoading(false);
+          // }
         );
     }
   };
