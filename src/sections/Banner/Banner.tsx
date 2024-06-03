@@ -1,11 +1,11 @@
 import { FiGithub } from "react-icons/fi";
 import { RiLinkedinLine } from "react-icons/ri";
 import resume from "../../../assets/files/Russell_Bañares.pdf";
-import { motion } from "framer-motion";
 import { usePageContext } from "../../context/PageContext";
 import HeroImage from "../../assets/svg/HeroImage";
 import { buttonAnimation } from "../../lib/animations";
 import { twMerge } from "tailwind-merge";
+import motion from "framer-motion";
 
 const Banner = () => {
   const { isDarkMode } = usePageContext();

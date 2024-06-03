@@ -1,14 +1,29 @@
-export const projectData = [
+export type TProjectsData = {
+  id: number,
+  title: string,
+  details: string,
+  technologies: string[],
+  liveLink: string
+  sourceCode: string
+  thumbnail: string,
+  images: {
+    src: string
+  }[],
+  video: string
+  
+}
+
+export const projectsData: TProjectsData[] = [
   {
     id: 1,
     title: "Password Generator",
     details:
       "A front-end mentor challenge, which enables user to generate a password depending on selected checkbox option and range slider for the password's length.",
-    technologiesUsed: ["ReactJS", "React Hot Toast"],
-    live_link: "https://pwgeneratorx.netlify.app/",
-    source_code:
+    technologies: ["ReactJS", "React Hot Toast"],
+    liveLink: "https://pwgeneratorx.netlify.app/",
+    sourceCode:
       "https://github.com/russellbanares322/password-generator-fem-challenge",
-    thumbnail_image:
+    thumbnail:
       "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1679665956/ProjectImages/PasswordGenerator/landing_dahk3i.jpg",
     images: [
       {
@@ -31,10 +46,10 @@ export const projectData = [
     title: "Netflix Clone",
     details:
       "Web application that mimics the UI of Netflix, displays different types of movies using TMDB Api. And allows the user to save movie to favorites.",
-    technologiesUsed: ["ReactJS", "Axios", "Firebase", "ReactSplide"],
-    live_link: "https://netflix-clone-d2z2.onrender.com/",
-    source_code: "https://github.com/russellbanares322/netflix-clone",
-    thumbnail_image:
+    technologies: ["ReactJS", "Axios", "Firebase", "ReactSplide"],
+    liveLink: "https://netflix-clone-d2z2.onrender.com/",
+    sourceCode: "https://github.com/russellbanares322/netflix-clone",
+    thumbnail:
       "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1678018753/ProjectImages/NetflixClone/netflix-cover_sibtvr.jpg",
     images: [
       {
@@ -60,10 +75,10 @@ export const projectData = [
     title: "ReactJS Firebase Crud",
     details:
       "A project that you can create, read, update and delete record. It also has an image upload functionality.",
-    technologiesUsed: ["ReactJS", "Firebase"],
-    live_link: "https://russcrud.netlify.app/",
-    source_code: "https://github.com/russellbanares322/react-firebase-crud",
-    thumbnail_image:
+    technologies: ["ReactJS", "Firebase"],
+    liveLink: "https://russcrud.netlify.app/",
+    sourceCode: "https://github.com/russellbanares322/react-firebase-crud",
+    thumbnail:
       "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687217/ProjectImages/FirebaseCrud/firebase_crud_uaps5d.jpg",
     images: [
       {
@@ -83,10 +98,10 @@ export const projectData = [
     title: "Property Finder",
     details:
       "Our capstone project which display different kinds of property, and allowing the user to set an appointment.",
-    technologiesUsed: ["ReactJS", "Firebase", "EmailJS", "Tawk.to Live Chat"],
-    live_link: "https://onehomeph.onrender.com/",
-    source_code: "https://github.com/russellbanares322/propertyfinder-app",
-    thumbnail_image:
+    technologies: ["ReactJS", "Firebase", "EmailJS", "Tawk.to Live Chat"],
+    liveLink: "https://onehomeph.onrender.com/",
+    sourceCode: "https://github.com/russellbanares322/propertyfinder-app",
+    thumbnail:
       "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687262/ProjectImages/PropertyFinder/property_finder_k578cd.jpg",
     images: [
       {
@@ -118,10 +133,10 @@ export const projectData = [
     title: "Trackeroo",
     details:
       "A project that uses an api to fetch data about crypto currency prices, with the help of axios library.",
-    technologiesUsed: ["ReactJS", "Axios", "CoingeckoAPI"],
-    live_link: "https://trackeroo.vercel.app/",
-    source_code: "https://github.com/russellbanares322/cryptotrackerapp",
-    thumbnail_image:
+    technologies: ["ReactJS", "Axios", "CoingeckoAPI"],
+    liveLink: "https://trackeroo.vercel.app/",
+    sourceCode: "https://github.com/russellbanares322/cryptotrackerapp",
+    thumbnail:
       "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687198/ProjectImages/CryptoApp/crypto_currency_tracker_app_voejlu.jpg",
     images: [
       {
@@ -144,10 +159,10 @@ export const projectData = [
     title: "Games List App",
     details:
       "Displaying different types of games with pagination, and axios library for api fetching.",
-    technologiesUsed: ["ReactJS", "Axios", "RapidAPI"],
-    live_link: "https://games-list-viewer.vercel.app/",
-    source_code: "https://github.com/russellbanares322/games-list-app",
-    thumbnail_image:
+    technologies: ["ReactJS", "Axios", "RapidAPI"],
+    liveLink: "https://games-list-viewer.vercel.app/",
+    sourceCode: "https://github.com/russellbanares322/games-list-app",
+    thumbnail:
       "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687297/ProjectImages/GamesList/game_app_g5fam1.jpg",
     images: [
       {

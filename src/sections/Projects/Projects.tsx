@@ -1,17 +1,20 @@
-import React, { useContext, useState } from "react";
-import { projectsData } from "../../../data/ProjectsData";
+import { useState } from "react";
 import { HiOutlineExternalLink, HiChevronRight } from "react-icons/hi";
 import { RxGithubLogo } from "react-icons/rx";
-import { PageContext } from "../../../context/PageContext";
-import Modal from "../../../global/modal/Modal";
 import ProjectDetails from "./ProjectDetails";
+import { TProjectsData, projectsData } from "../../data/projectsData";
+import { usePageContext } from "../../context/PageContext";
+import { Modal } from "../../components";
 
 const Projects = () => {
-  const { isDarkMode, projectsRef } = useContext(PageContext);
+  const { isDarkMode, projectsRef } = usePageContext();
   const [showProjectDetailsModal, setShowProjectDetailsModal] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<TProjectsData | null>(
+    null
+  );
+  const projectsDataLength = projectsData.length;
 
-  const handleOpenModal = (selectedProjectData) => {
+  const handleOpenModal = (selectedProjectData: TProjectsData) => {
     setSelectedProject(selectedProjectData);
     setShowProjectDetailsModal(true);
   };
@@ -38,7 +41,7 @@ const Projects = () => {
           {projectsData?.map((project, index) => (
             <div
               className={`max-w-[1640px] h-full ${
-                index !== projectsData.length - 1 && "mb-5"
+                index !== projectsDataLength - 1 && "mb-5"
               }  md:mb-10`}
               key={project.id}
             >
@@ -49,7 +52,7 @@ const Projects = () => {
                 <img
                   onClick={() => handleOpenModal(project)}
                   className="duration-300 object-cover rounded-lg cursor-pointer hover:scale-[1.1]"
-                  src={project.thumbnail_image}
+                  src={project.thumbnail}
                 />
               </div>
               <div
@@ -69,7 +72,7 @@ const Projects = () => {
                   }`}
                 />
                 <div className="flex items-center gap-2">
-                  <a target="_blank" href={project.source_code}>
+                  <a target="_blank" href={project.sourceCode}>
                     <RxGithubLogo
                       className={`${
                         isDarkMode
@@ -78,7 +81,7 @@ const Projects = () => {
                       } cursor-pointer text-[1.63rem] md:text-[2rem]`}
                     />
                   </a>
-                  <a target="_blank" href={project.live_link}>
+                  <a target="_blank" href={project.liveLink}>
                     <HiOutlineExternalLink
                       className={`${
                         isDarkMode
@@ -91,7 +94,7 @@ const Projects = () => {
               </div>
               <div data-aos="fade-right" className="my-1">
                 <p className="text-yellow font-light text-md">
-                  {project.technologiesUsed.join(" - ")}
+                  {project.technologies.join(" - ")}
                 </p>
               </div>
               <div data-aos="fade-right" className="my-3 w-fit overflow-hidden">
