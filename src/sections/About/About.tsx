@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
 import aboutIcon from "../../../assets/svg/about.svg";
-import { PageContext } from "../../../context/PageContext";
+import { usePageContext } from "../../context/PageContext";
 const About = () => {
-  const { isDarkMode, aboutRef } = useContext(PageContext);
+  const { isDarkMode, aboutRef } = usePageContext();
 
   return (
     <div

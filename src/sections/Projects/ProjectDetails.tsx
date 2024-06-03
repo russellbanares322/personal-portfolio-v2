@@ -1,21 +1,24 @@
-import React from "react";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { RxGithubLogo } from "react-icons/rx";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { TProjectsData } from "../../data/projectsData";
 
-const ProjectDetails = ({ selectedProject }) => {
+type ProjectDetailsProps = {
+  selectedProject: TProjectsData | null;
+};
+const ProjectDetails = ({ selectedProject }: ProjectDetailsProps) => {
   return (
     <>
       <img
         className="rounded-tr-lg rounded-tl-lg"
-        src={selectedProject?.thumbnail_image}
+        src={selectedProject?.thumbnail}
       />
       <div className="px-5 pt-5">
         <h1 className="text-white text-[1.5rem] md:text-[2rem] font-bold">
           {selectedProject?.title}
         </h1>
         <p className="text-md text-yellow">
-          {selectedProject?.technologiesUsed.join(" - ")}
+          {selectedProject?.technologies.join(" - ")}
         </p>
         <p className="my-5 text-white text-md">{selectedProject?.details}</p>
         <div>
@@ -56,14 +59,14 @@ const ProjectDetails = ({ selectedProject }) => {
         </h3>
         <div className="flex gap-3 text-yellow mt-2">
           <a
-            href={selectedProject?.source_code}
+            href={selectedProject?.sourceCode}
             target="_blank"
             className="text-md flex items-center gap-1 hover:underline"
           >
             <RxGithubLogo size={17} /> source code
           </a>
           <a
-            href={selectedProject?.live_link}
+            href={selectedProject?.liveLink}
             target="_blank"
             className="text-md flex items-center gap-1 hover:underline"
           >
