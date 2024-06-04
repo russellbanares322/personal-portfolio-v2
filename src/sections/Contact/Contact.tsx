@@ -6,6 +6,7 @@ import emailjs from "@emailjs/browser";
 import { usePageContext } from "../../context/PageContext";
 import { buttonAnimation } from "../../lib/animations";
 import { motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
 const Contact = () => {
   const { isDarkMode, contactRef } = usePageContext();
@@ -45,7 +46,7 @@ const Contact = () => {
           formValues,
           VITE_REACT_APP_USER_ID
         )
-        .finally(
+        .then(
           () => {
             toast.success("Message sent successfully");
             setFormData({
@@ -55,11 +56,11 @@ const Contact = () => {
             });
             setIsInputEmpty(false);
             setIsLoading(false);
+          },
+          () => {
+            toast.error("Failed to send message, please try again");
+            setIsLoading(false);
           }
-          // () => {
-          //   toast.error("Failed to send message, please try again");
-          //   setIsLoading(false);
-          // }
         );
     }
   };
@@ -67,9 +68,10 @@ const Contact = () => {
   return (
     <div
       ref={contactRef}
-      className={`${
-        isDarkMode ? "text-white" : "text-blue"
-      } page-padding-x max-w-[1640px] mx-auto w-full page-padding-top mb-20`}
+      className={twMerge(
+        isDarkMode ? "text-white" : "text-blue",
+        "page-padding-x max-w-[1640px] mx-auto w-full page-padding-top mb-20"
+      )}
     >
       <p data-aos="fade-right" className="section-title">
         GET IN TOUCH
@@ -88,17 +90,19 @@ const Contact = () => {
               value={formData.userName}
               name="userName"
               onChange={handleFormChange}
-              className={`input-style ${
+              className={twMerge(
                 isInputDirty && !formData.userName
                   ? "border border-red"
-                  : "border border-gray-300"
-              } mb-2`}
+                  : "border border-gray-300",
+                "input-style mb-2"
+              )}
               type="text"
             />
             <p
-              className={`${
-                isInputDirty && !formData.userName ? "visible" : "hidden"
-              } text-xs text-red flex items-center gap-1`}
+              className={twMerge(
+                isInputDirty && !formData.userName ? "visible" : "hidden",
+                "text-xs text-red flex items-center gap-1"
+              )}
             >
               Name is required
               <HiOutlineExclamationCircle size={15} />
@@ -108,17 +112,19 @@ const Contact = () => {
               value={formData.email}
               name="email"
               onChange={handleFormChange}
-              className={`input-style ${
+              className={twMerge(
                 isInputDirty && !formData.email
                   ? "border border-red"
-                  : "border border-gray-300"
-              } mb-2`}
+                  : "border border-gray-300",
+                "input-style mb-2"
+              )}
               type="email"
             />
             <p
-              className={`${
-                isInputDirty && !formData.email ? "visible" : "hidden"
-              } text-xs text-red flex items-center gap-1`}
+              className={twMerge(
+                isInputDirty && !formData.email ? "visible" : "hidden",
+                "text-xs text-red flex items-center gap-1"
+              )}
             >
               Email is required
               <HiOutlineExclamationCircle size={15} />
@@ -128,16 +134,18 @@ const Contact = () => {
               value={formData.message}
               name="message"
               onChange={handleFormChange}
-              className={`textarea-style ${
+              className={twMerge(
                 isInputDirty && !formData.message
                   ? "border border-red"
-                  : "border border-gray-300"
-              } mb-2`}
+                  : "border border-gray-300",
+                "textarea-style mb-2"
+              )}
             />
             <p
-              className={`${
-                isInputDirty && !formData.message ? "visible" : "hidden"
-              } text-xs text-red flex items-center gap-1`}
+              className={twMerge(
+                isInputDirty && !formData.message ? "visible" : "hidden",
+                " text-xs text-red flex items-center gap-1"
+              )}
             >
               Message is required
               <HiOutlineExclamationCircle size={15} />
