@@ -5,6 +5,7 @@ import ProjectDetails from "./ProjectDetails";
 import { TProjectsData, projectsData } from "../../data/projectsData";
 import { usePageContext } from "../../context/PageContext";
 import { Modal } from "../../components";
+import { twMerge } from "tailwind-merge";
 
 const Projects = () => {
   const { isDarkMode, projectsRef } = usePageContext();
@@ -13,6 +14,9 @@ const Projects = () => {
     null
   );
   const projectsDataLength = projectsData.length;
+  const iconStyleClassName = isDarkMode
+    ? "text-gray-300 hover:text-white"
+    : "text-blue hover:text-light-blue";
 
   const handleOpenModal = (selectedProjectData: TProjectsData) => {
     setSelectedProject(selectedProjectData);
@@ -31,18 +35,20 @@ const Projects = () => {
       >
         <p
           data-aos="fade-right"
-          className={`${
-            isDarkMode ? "text-white" : "text-black"
-          } section-title`}
+          className={twMerge(
+            isDarkMode ? "text-white" : "text-black",
+            "section-title"
+          )}
         >
           Projects
         </p>
         <div className="mt-16 grid grid-cols md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10">
           {projectsData?.map((project, index) => (
             <div
-              className={`max-w-[1640px] h-full ${
-                index !== projectsDataLength - 1 && "mb-5"
-              }  md:mb-10`}
+              className={twMerge(
+                index !== projectsDataLength - 1 && "mb-5",
+                "max-w-[1640px] h-full md:mb-10"
+              )}
               key={project.id}
             >
               <div
@@ -60,34 +66,34 @@ const Projects = () => {
                 className="flex items-center gap-[1rem] w-full mt-5"
               >
                 <p
-                  className={`font-bold ${
-                    isDarkMode ? "text-gray-300" : "text-blue"
-                  } text-[1.3rem] md:text-[1.5rem] w-auto md:min-w-max`}
+                  className={twMerge(
+                    isDarkMode ? "text-gray-300" : "text-blue",
+                    "font-bold text-[1.3rem] md:text-[1.5rem] w-auto md:min-w-max"
+                  )}
                 >
                   {project.title}
                 </p>
                 <div
-                  className={`w-full h-[1px] opacity-[0.3] ${
-                    isDarkMode ? "bg-white" : "bg-blue"
-                  }`}
+                  className={twMerge(
+                    isDarkMode ? "bg-white" : "bg-blue",
+                    "w-full h-[1px] opacity-[0.3]"
+                  )}
                 />
                 <div className="flex items-center gap-2">
                   <a target="_blank" href={project.sourceCode}>
                     <RxGithubLogo
-                      className={`${
-                        isDarkMode
-                          ? "text-gray-300 hover:text-white"
-                          : "text-blue hover:text-light-blue"
-                      } cursor-pointer text-[1.63rem] md:text-[2rem]`}
+                      className={twMerge(
+                        iconStyleClassName,
+                        "cursor-pointer text-[1.63rem] md:text-[2rem]"
+                      )}
                     />
                   </a>
                   <a target="_blank" href={project.liveLink}>
                     <HiOutlineExternalLink
-                      className={`${
-                        isDarkMode
-                          ? "text-gray-300 hover:text-white"
-                          : "text-blue hover:text-light-blue"
-                      } cursor-pointer text-[1.8rem] md:text-[2rem]`}
+                      className={twMerge(
+                        iconStyleClassName,
+                        "cursor-pointer text-[1.8rem] md:text-[2rem]"
+                      )}
                     />
                   </a>
                 </div>
@@ -99,9 +105,10 @@ const Projects = () => {
               </div>
               <div data-aos="fade-right" className="my-3 w-fit overflow-hidden">
                 <p
-                  className={`${
-                    isDarkMode ? "text-gray-300" : "text-blue"
-                  } text-md md:text-lg font-light`}
+                  className={twMerge(
+                    isDarkMode ? "text-gray-300" : "text-blue",
+                    "text-md md:text-lg font-light"
+                  )}
                 >
                   {project.details}
                   <span

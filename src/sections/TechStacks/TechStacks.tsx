@@ -1,6 +1,7 @@
 import { HiBookmark } from "react-icons/hi";
 import { usePageContext } from "../../context/PageContext";
 import { techStacksData } from "../../data/techStacksData";
+import { twMerge } from "tailwind-merge";
 
 const TechStacks = () => {
   const { isDarkMode, techStacksRef } = usePageContext();
@@ -8,9 +9,10 @@ const TechStacks = () => {
   return (
     <div
       ref={techStacksRef}
-      className={`${
-        isDarkMode ? "text-white" : "text-blue"
-      } page-padding-x max-w-[1640px] mx-auto page-padding-top`}
+      className={twMerge(
+        isDarkMode ? "text-white" : "text-blue",
+        "page-padding-x max-w-[1640px] mx-auto page-padding-top"
+      )}
     >
       <p data-aos="fade-right" className="section-title">
         Tech stacks
