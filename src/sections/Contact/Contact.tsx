@@ -98,15 +98,12 @@ const Contact = () => {
               )}
               type="text"
             />
-            <p
-              className={twMerge(
-                isInputDirty && !formData.userName ? "visible" : "hidden",
-                "text-xs text-red flex items-center gap-1"
-              )}
-            >
-              Name is required
-              <HiOutlineExclamationCircle size={15} />
-            </p>
+            {isInputDirty && !formData.userName && (
+              <p className="text-xs text-red flex items-center gap-1">
+                Name is required
+                <HiOutlineExclamationCircle size={15} />
+              </p>
+            )}
             <label className="input-label-style">Email Address</label>
             <input
               value={formData.email}
@@ -120,15 +117,12 @@ const Contact = () => {
               )}
               type="email"
             />
-            <p
-              className={twMerge(
-                isInputDirty && !formData.email ? "visible" : "hidden",
-                "text-xs text-red flex items-center gap-1"
-              )}
-            >
-              Email is required
-              <HiOutlineExclamationCircle size={15} />
-            </p>
+            {isInputDirty && !formData.email && (
+              <p className="text-xs text-red flex items-center gap-1">
+                Email is required
+                <HiOutlineExclamationCircle size={15} />
+              </p>
+            )}
             <label className="input-label-style">Message</label>
             <textarea
               value={formData.message}
@@ -141,15 +135,12 @@ const Contact = () => {
                 "textarea-style mb-2"
               )}
             />
-            <p
-              className={twMerge(
-                isInputDirty && !formData.message ? "visible" : "hidden",
-                " text-xs text-red flex items-center gap-1"
-              )}
-            >
-              Message is required
-              <HiOutlineExclamationCircle size={15} />
-            </p>
+            {isInputDirty && !formData.message && (
+              <p className="text-xs text-red flex items-center gap-1">
+                Message is required
+                <HiOutlineExclamationCircle size={15} />
+              </p>
+            )}
             <motion.button
               whileTap={buttonAnimation.whileTap}
               whileHover={buttonAnimation.whileHover}
