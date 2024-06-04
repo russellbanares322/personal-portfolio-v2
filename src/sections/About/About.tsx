@@ -1,4 +1,4 @@
-import aboutIcon from "../../../assets/svg/about.svg";
+import aboutIcon from "../../assets/svg/about.svg";
 import { usePageContext } from "../../context/PageContext";
 const About = () => {
   const { isDarkMode, aboutRef } = usePageContext();

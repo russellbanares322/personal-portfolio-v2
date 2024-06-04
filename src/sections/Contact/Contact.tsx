@@ -1,5 +1,5 @@
 import { useState } from "react";
-import contactIcon from "../../../assets/svg/contact.svg";
+import contactIcon from "../../assets/svg/contact.svg";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import toast from "react-hot-toast";
 import emailjs from "@emailjs/browser";

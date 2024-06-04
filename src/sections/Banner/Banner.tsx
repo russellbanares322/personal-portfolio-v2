@@ -1,6 +1,6 @@
 import { FiGithub } from "react-icons/fi";
 import { RiLinkedinLine } from "react-icons/ri";
-import resume from "../../../assets/files/Russell_Bañares.pdf";
+import resume from "../../assets/files/Russell_Bañares.pdf";
 import { motion } from "framer-motion";
 import { usePageContext } from "../../context/PageContext";
 import HeroImage from "../../assets/svg/HeroImage";
