@@ -132,7 +132,7 @@ export const projectsData: TProjectsData[] = [
     id: 5,
     title: "Trackeroo",
     details:
-      "A project that uses an api to fetch data about crypto currency prices, with the help of axios library.",
+      "Displays crypto currency prices, allow user to view price change that happened using a graph.",
     technologies: ["ReactJS", "Axios", "CoingeckoAPI"],
     liveLink: "https://trackeroo.vercel.app/",
     sourceCode: "https://github.com/russellbanares322/cryptotrackerapp",
