@@ -31,11 +31,7 @@ const Navbar = () => {
     "text-yellow after:absolute after:bottom-[-1.6rem] after:w-full after:h-1 after:bg-yellow after:left-0 after:rounded-md";
 
   const handleBlurNavbar = () => {
-    if (window.scrollY >= 80) {
-      setBlurNavbar(true);
-    } else {
-      setBlurNavbar(false);
-    }
+    setBlurNavbar(window.scrollY >= 80);
   };
 
   const handleChangeNavLink = (currentNavLink: TActiveNavLink) => {
