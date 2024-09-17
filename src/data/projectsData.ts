@@ -70,29 +70,29 @@ export const projectsData: TProjectsData[] = [
     ],
     video: "../assets/project-videos/netflix_clone.mp4",
   },
-  {
-    id: 3,
-    title: "ReactJS Firebase Crud",
-    details:
-      "A project that you can create, read, update and delete record. It also has an image upload functionality.",
-    technologies: ["ReactJS", "Firebase"],
-    liveLink: "https://russcrud.netlify.app/",
-    sourceCode: "https://github.com/russellbanares322/react-firebase-crud",
-    thumbnail:
-      "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687217/ProjectImages/FirebaseCrud/firebase_crud_uaps5d.jpg",
-    images: [
-      {
-        src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687217/ProjectImages/FirebaseCrud/firebase_crud_uaps5d.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687217/ProjectImages/FirebaseCrud/add_page_adrcgi.png",
-      },
-      {
-        src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687217/ProjectImages/FirebaseCrud/update_page_hmwbjq.png",
-      },
-    ],
-    video: "../assets/project-videos/firebase_crud.mp4",
-  },
+  // {
+  //   id: 3,
+  //   title: "ReactJS Firebase Crud",
+  //   details:
+  //     "A project that you can create, read, update and delete record. It also has an image upload functionality.",
+  //   technologies: ["ReactJS", "Firebase"],
+  //   liveLink: "https://russcrud.netlify.app/",
+  //   sourceCode: "https://github.com/russellbanares322/react-firebase-crud",
+  //   thumbnail:
+  //     "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687217/ProjectImages/FirebaseCrud/firebase_crud_uaps5d.jpg",
+  //   images: [
+  //     {
+  //       src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687217/ProjectImages/FirebaseCrud/firebase_crud_uaps5d.jpg",
+  //     },
+  //     {
+  //       src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687217/ProjectImages/FirebaseCrud/add_page_adrcgi.png",
+  //     },
+  //     {
+  //       src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1675687217/ProjectImages/FirebaseCrud/update_page_hmwbjq.png",
+  //     },
+  //   ],
+  //   video: "../assets/project-videos/firebase_crud.mp4",
+  // },
   {
     id: 4,
     title: "Property Finder",
