@@ -40,6 +40,7 @@ const Modal = ({ children, open, onClose }: ModalProps) => {
           !open && "translate-y-[150vh] opacity-0",
           "bg-light-blue duration-200 ease-in-out translate-y-0 cursor-default w-auto md:w-[45rem] lg:w-[45rem] xl:w-[45rem] 2xl:w-[45rem] h-auto rounded-lg pb-7 my-5 mx-auto"
         )}
+        onClick={(e) => e.stopPropagation()}
       >
         {children}
       </div>
