@@ -1,3 +1,7 @@
+type Images = {
+  src: string
+}
+
 export type TProjectsData = {
   id: number,
   title: string,
@@ -6,9 +10,7 @@ export type TProjectsData = {
   liveLink: string
   sourceCode: string
   thumbnail: string,
-  images: {
-    src: string
-  }[],
+  images: Images[],
   video: string
   
 }
@@ -69,6 +71,19 @@ export const projectsData: TProjectsData[] = [
       },
     ],
     video: "../assets/project-videos/netflix_clone.mp4",
+  },
+    {
+    id: 3,
+    title: "DevNotesve",
+    details:
+      "Save and organize your development notes easily, keeping track of your coding ideas, progress, and solutions all in one place",
+    technologies: ["ReactJS", "NodeJs", "PostgreSQL", "Clerk Authentication", "TailwindCSS", "ShadcnUi"],
+    liveLink: "",
+    sourceCode: "https://github.com/russellbanares322/dev-notesve",
+    thumbnail:
+      "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1727701631/ProjectImages/DevNoteSve/login-page.png",
+    images: [],
+    video: "../assets/project-videos/firebase_crud.mp4",
   },
   // {
   //   id: 3,
