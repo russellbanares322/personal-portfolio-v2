@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { HiOutlineExternalLink, HiChevronRight } from "react-icons/hi";
 import { RxGithubLogo } from "react-icons/rx";
+import { FaTools } from "react-icons/fa";
 import ProjectDetails from "./ProjectDetails";
 import { TProjectsData, projectsData } from "../../data/projectsData";
 import { usePageContext } from "../../context/PageContext";
@@ -43,84 +44,113 @@ const Projects = () => {
           Projects
         </p>
         <div className="mt-16 grid grid-cols md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10">
-          {projectsData?.map((project, index) => (
-            <div
-              className={twMerge(
-                index !== projectsDataLength - 1 && "mb-5",
-                "max-w-[1640px] h-full md:mb-10"
-              )}
-              key={project.id}
-            >
+          {projectsData?.map((project, index) => {
+            const emptyImg = project.images.length === 0;
+            const isUnderDevelopment = project.isUnderDevelopment;
+            const isProjectDevnoteSve = project.id === 3;
+
+            return (
               <div
-                data-aos="zoom-in"
-                className="relative overflow-hidden rounded-lg"
+                className={twMerge(
+                  index !== projectsDataLength - 1 && "mb-5",
+                  "max-w-[1640px] h-full md:mb-10"
+                )}
+                key={project.id}
               >
-                <img
-                  onClick={() => handleOpenModal(project)}
-                  className="duration-300 object-cover rounded-lg cursor-pointer hover:scale-[1.1]"
-                  src={project.thumbnail}
-                />
-              </div>
-              <div
-                data-aos="fade-right"
-                className="flex items-center gap-[1rem] w-full mt-5"
-              >
-                <p
+                <div
+                  data-aos="zoom-in"
                   className={twMerge(
-                    isDarkMode ? "text-gray-300" : "text-blue",
-                    "font-bold text-[1.3rem] md:text-[1.5rem] w-auto md:min-w-max"
+                    isProjectDevnoteSve && !isDarkMode ? "shadow-md" : "",
+                    "relative overflow-hidden rounded-lg"
                   )}
                 >
-                  {project.title}
-                </p>
-                <div
-                  className={twMerge(
-                    isDarkMode ? "bg-white" : "bg-blue",
-                    "w-full h-[1px] opacity-[0.3]"
+                  <img
+                    onClick={() => {
+                      if (!isUnderDevelopment) {
+                        handleOpenModal(project);
+                      }
+                    }}
+                    className={twMerge(
+                      emptyImg ? "cursor-default" : "cursor-pointer",
+                      "duration-300 object-cover rounded-lg hover:scale-[1.1]"
+                    )}
+                    src={project.thumbnail}
+                  />
+                  {isUnderDevelopment && (
+                    <div className="absolute top-3 right-3 flex items-center gap-1 bg-black/50 px-2">
+                      <p className="text-[.7rem] text-white">
+                        Under Development
+                      </p>
+                      <FaTools className="text-white" size={12} />
+                    </div>
                   )}
-                />
-                <div className="flex items-center gap-2">
-                  <a target="_blank" href={project.sourceCode}>
-                    <RxGithubLogo
-                      className={twMerge(
-                        iconStyleClassName,
-                        "cursor-pointer text-[1.63rem] md:text-[2rem]"
-                      )}
-                    />
-                  </a>
-                  <a target="_blank" href={project.liveLink}>
-                    <HiOutlineExternalLink
-                      className={twMerge(
-                        iconStyleClassName,
-                        "cursor-pointer text-[1.8rem] md:text-[2rem]"
-                      )}
-                    />
-                  </a>
+                </div>
+                <div
+                  data-aos="fade-right"
+                  className="flex items-center gap-[1rem] w-full mt-5"
+                >
+                  <p
+                    className={twMerge(
+                      isDarkMode ? "text-gray-300" : "text-blue",
+                      "font-bold text-[1.3rem] md:text-[1.5rem] w-auto md:min-w-max"
+                    )}
+                  >
+                    {project.title}
+                  </p>
+                  <div
+                    className={twMerge(
+                      isDarkMode ? "bg-white" : "bg-blue",
+                      "w-full h-[1px] opacity-[0.3]"
+                    )}
+                  />
+                  <div className="flex items-center gap-2">
+                    <a target="_blank" href={project.sourceCode}>
+                      <RxGithubLogo
+                        className={twMerge(
+                          iconStyleClassName,
+                          "cursor-pointer text-[1.63rem] md:text-[2rem]"
+                        )}
+                      />
+                    </a>
+                    {!isUnderDevelopment && (
+                      <a target="_blank" href={project.liveLink}>
+                        <HiOutlineExternalLink
+                          className={twMerge(
+                            iconStyleClassName,
+                            "cursor-pointer text-[1.8rem] md:text-[2rem]"
+                          )}
+                        />
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <div data-aos="fade-right" className="my-1">
+                  <p className="text-yellow font-light text-md">
+                    {project.technologies.join(" - ")}
+                  </p>
+                </div>
+                <div
+                  data-aos="fade-right"
+                  className="my-3 w-fit overflow-hidden"
+                >
+                  <p
+                    className={twMerge(
+                      isDarkMode ? "text-gray-300" : "text-blue",
+                      "text-md md:text-lg font-light"
+                    )}
+                  >
+                    {project.details}
+                    <span
+                      onClick={() => handleOpenModal(project)}
+                      className="flex gap-1 items-center text-sm py-1 md:text-[1rem] text-yellow cursor-pointer hover:underline"
+                    >
+                      Learn more <HiChevronRight />
+                    </span>
+                  </p>
                 </div>
               </div>
-              <div data-aos="fade-right" className="my-1">
-                <p className="text-yellow font-light text-md">
-                  {project.technologies.join(" - ")}
-                </p>
-              </div>
-              <div data-aos="fade-right" className="my-3 w-fit overflow-hidden">
-                <p
-                  className={twMerge(
-                    isDarkMode ? "text-gray-300" : "text-blue",
-                    "text-md md:text-lg font-light"
-                  )}
-                >
-                  {project.details}
-                  <span
-                    onClick={() => handleOpenModal(project)}
-                    className="flex gap-1 items-center text-sm py-1 md:text-[1rem] text-yellow cursor-pointer hover:underline"
-                  >
-                    Learn more <HiChevronRight />
-                  </span>
-                </p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
       <Modal open={showProjectDetailsModal} onClose={handleCloseModal}>

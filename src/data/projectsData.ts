@@ -12,6 +12,7 @@ export type TProjectsData = {
   thumbnail: string,
   images: Images[],
   video: string
+  isUnderDevelopment:boolean
   
 }
 
@@ -42,6 +43,7 @@ export const projectsData: TProjectsData[] = [
       },
     ],
     video: "../assets/project-videos/password_generator.mp4",
+    isUnderDevelopment: false
   },
   {
     id: 2,
@@ -71,8 +73,9 @@ export const projectsData: TProjectsData[] = [
       },
     ],
     video: "../assets/project-videos/netflix_clone.mp4",
+    isUnderDevelopment: false
   },
-    {
+  {
     id: 3,
     title: "DevNotesve",
     details:
@@ -81,9 +84,10 @@ export const projectsData: TProjectsData[] = [
     liveLink: "",
     sourceCode: "https://github.com/russellbanares322/dev-notesve",
     thumbnail:
-      "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1727701631/ProjectImages/DevNoteSve/login-page.png",
+      "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1727702402/ProjectImages/DevNoteSve/login-page.png",
     images: [],
     video: "../assets/project-videos/firebase_crud.mp4",
+    isUnderDevelopment: true
   },
   // {
   //   id: 3,
@@ -142,6 +146,7 @@ export const projectsData: TProjectsData[] = [
       },
     ],
     video: "../assets/project-videos/property_management_system.mp4",
+    isUnderDevelopment: false
   },
   {
     id: 5,
@@ -168,6 +173,7 @@ export const projectsData: TProjectsData[] = [
       },
     ],
     video: "../assets/project-videos/crypto_app.mp4",
+    isUnderDevelopment: false
   },
   {
     id: 6,
@@ -188,5 +194,6 @@ export const projectsData: TProjectsData[] = [
       },
     ],
     video: "../assets/project-videos/games_list_app.mkv",
+    isUnderDevelopment: false
   },
 ];
