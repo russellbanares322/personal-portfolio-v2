@@ -79,15 +79,34 @@ export const projectsData: TProjectsData[] = [
     id: 3,
     title: "DevNotesve",
     details:
-      "Save and organize your development notes easily, keeping track of your coding ideas, progress, and solutions all in one place",
+      "Save and organize your development notes easily, keeping track of your coding ideas, progress, and solutions all in one place.",
     technologies: ["ReactJS", "NodeJs", "PostgreSQL", "Clerk Authentication", "TailwindCSS", "ShadcnUi"],
-    liveLink: "",
+    liveLink: "https://dev-notesve.vercel.app",
     sourceCode: "https://github.com/russellbanares322/dev-notesve",
     thumbnail:
       "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1727702402/ProjectImages/DevNoteSve/login-page.png",
-    images: [],
-    video: "../assets/project-videos/firebase_crud.mp4",
-    isUnderDevelopment: true
+    images: [
+      {
+        src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1731497719/ProjectImages/DevNoteSve/Authenticated_Initial_Page_vx1krb.png"
+      },
+      {
+        src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1731497728/ProjectImages/DevNoteSve/Create_Note_Modal_le2zb5.png"
+      },
+      {
+        src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1731497732/ProjectImages/DevNoteSve/Created_Note_ocggbm.png"
+      },
+      {
+        src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1731497743/ProjectImages/DevNoteSve/Paginated_View_ynqsd1.png"
+      },
+      {
+        src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1731497737/ProjectImages/DevNoteSve/Paginated_View_Dark_Mode_lxo11r.png"
+      },
+      {
+        src: "https://res.cloudinary.com/dlcvmxjzv/image/upload/v1731497747/ProjectImages/DevNoteSve/Update_Note_Modal_b3argk.png"
+      },
+    ],
+    video: "",
+    isUnderDevelopment: false
   },
   // {
   //   id: 3,
